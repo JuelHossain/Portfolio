@@ -1,11 +1,10 @@
-import { ChevronDownIcon, ChevronRightIcon, HamburgerIcon, MoonIcon, SearchIcon, SmallAddIcon } from '@chakra-ui/icons';
-import { Box, Button, Center, Container, DarkMode, Flex, Heading, HStack, IconButton, } from '@chakra-ui/react';
+import {HamburgerIcon, MoonIcon } from '@chakra-ui/icons';
+import { Box, Center, Container,  Flex, Heading, HStack, IconButton, } from '@chakra-ui/react';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
+import Nav from './Nav';
 
 const Header = () => {
-  const pages = ["Home", "Blog", "About",]
   const[small, setSmall] = useState(false);
   return (
     <Box as="header" my={2} bg="white" p={1}>
@@ -21,46 +20,25 @@ const Header = () => {
             icon={<HamburgerIcon />}
           />
           <Center>
-            <Heading size="lg">Juel Hossain</Heading>
+            <Heading id="logo" ml={2} size="md">
+              Juel Hossain
+            </Heading>
           </Center>
-          <HStack display={["none", "none", "flex"]}>
-            {pages.map((page) => (
-              <Button
-                as={NavLink}
-                to={`/${page}`}
-                variant={"ghost"}
-                _focus={{ border: "none" }}
-              >
-                {page}
-              </Button>
-            ))}
-          </HStack>
+          {!small &&<Nav small={small}/>}
           <HStack>
-            <IconButton
-              _focus={{ border: "none" }}
-              variant={"ghost"}
-              icon={<MoonIcon />}
-            />
+            <button className="hover:bg-yellow-300 shadow hover:shadow-md font-bold px-3 py-1 rounded-full">
+              <MoonIcon />
+            </button>
           </HStack>
         </Flex>
       </Container>
-      {small&&<Container maxW={"container.lg"}>
-        <Center gap={4} justify="space-between">
-          <HStack display={["flex", "flex", "none"]}>
-            {pages.map((page) => (
-              <Button
-                as={NavLink}
-                to={`/${page}`}
-                variant={"ghost"}
-                _focus={{ border: "none" }}
-              >
-                {page}
-              </Button>
-            ))}
-          </HStack>
-
-        </Center>
-      </Container>}
+      {small && (
+        <Container maxW={"container.lg"}>
+          <Center gap={4} justify="space-between">
+           {small&& <Nav small={small} />}
+          </Center>
+        </Container>
+      )}
     </Box>
   );
 };
