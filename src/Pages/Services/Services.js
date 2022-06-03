@@ -7,9 +7,10 @@ import { TbSettingsAutomation } from "react-icons/tb";
 const Services = () => {
     return (
       <Container maxW={"container.lg"} my="6">
-        <Heading py={6} size={"md"}>
+        <Heading py={6} size={"md"} className='text-center'>
           What I can Offer?
         </Heading>
+        <hr  className='mb-6 mx-60'/>
         <SimpleGrid columns={[1, 2, 3, 4]} spacing="2">
           <ServicesCard
             icon={<MdOutlineDesignServices />}

@@ -1,15 +1,14 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
   Image,
-  Button,
+
   Center,
   Container,
   Flex,
   Text,
   VStack,
   Heading,
-  Link,
-  useMediaQuery,
+
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import MyButton from "../../Components/MyButton";
@@ -37,7 +36,7 @@ const Banner = () => {
             <Heading color={"red.900"} fontWeight="black" fontSize={"5xl"}>
               Juel Hossain
             </Heading>
-            <Heading color={"red.500"} fontWeight="black" fontSize={"5xl"}>
+            <Heading color={"red.500"} fontWeight="black" fontSize={"5xl"} className='truncate'>
               {titles[index % titles.length]}
             </Heading>
             <Text>
