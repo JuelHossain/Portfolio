@@ -107,19 +107,19 @@ const About = () => {
   return (
     <Container maxW={"container.lg"}>
       <Head />
-          <Education edu={courses}
-              name="Private Courses ."
-              title="Here is some info about my programming journey. how i became a web dev you can have some idea from below. information. please do click on the name of the institutions to reach their website."
-          />
+      <Education edu={courses}
+          name="Private Courses ."
+          title="Here is some info about my programming journey. how i became a web dev you can have some idea from below. information. please do click on the name of the institutions to reach their website."
+      />
+              <Education
+                edu={exp}
+                name="Experiences ."
+                title="Here is some info about my experiences. i have no experiences working in any company as a web dev . but i have some other experiences which you can see below."
+              />
       <Education
         edu={edu}
         name="Academic Carrier ."
         title="Here is some info about my Academic Carrier . from start to begin ."
-      />
-      <Education
-        edu={exp}
-        name="Experiences ."
-        title="Here is some info about my experiences. i have no experiences working in any company as a web dev . but i have some other experiences which you can see below."
       />
     </Container>
   );
