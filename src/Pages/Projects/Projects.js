@@ -1,4 +1,4 @@
-import { Button, Container, HStack, SimpleGrid, Slide, Text } from "@chakra-ui/react";
+import {  Container,  SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
 import { Heading } from "@chakra-ui/react";
 import ProjectsCard from "./ProjectsCard";
@@ -7,7 +7,6 @@ import screw from "../../assets/screencapture-screw-inc-web-app-2022-06-04-13_54
 import tourboy from "../../assets/screencapture-tourboy-web-app-2022-06-04-14_26_23.png";
 import superhero from "../../assets/screencapture-superheroshop-netlify-app-2022-06-04-14_36_17.png";
 import { Link } from "react-router-dom";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
 const Projects = ({home,size}) => {
   const projects = [
     {

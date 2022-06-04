@@ -1,4 +1,4 @@
-import { Button, Center, Container,  Heading, SimpleGrid, Text } from '@chakra-ui/react';
+import {Container,  Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import React from 'react';
 
 import SkillsCard from './SkillsCard';
@@ -12,7 +12,6 @@ import {
 } from "react-icons/si";
 
 import { Link } from 'react-router-dom';
-import { ArrowForwardIcon } from '@chakra-ui/icons';
 
 const SkillsOverView = () => {
     return (
