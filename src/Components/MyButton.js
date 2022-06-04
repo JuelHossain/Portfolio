@@ -2,7 +2,7 @@ import React from "react";
 
 const MyButton = ({ text, link, icon }) => {
   return (
-    <a
+    <a download
       className="relative inline-block group focus:outline-none focus:ring"
       href={link}
     >

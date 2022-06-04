@@ -1,8 +1,11 @@
 import React from "react";
 
-const ServicesCard = ({ icon, title, text, rating }) => {
+const ServicesCard = ({sp, icon, title, text, rating,...props }) => {
   return (
-    <div className="relative block p-8 border border-gray-100 hover:shadow-xl shadow rounded-xl hover:bg-yellow-300">
+    <div
+      {...props}
+      className={`${sp} relative block p-8 border border-gray-100 hover:shadow-xl shadow rounded-xl hover:bg-yellow-300`}
+    >
       <span className="absolute right-4 top-4 rounded-full px-3 py-1.5 bg-green-100 text-green-600 font-medium text-xs">
         {rating}
       </span>

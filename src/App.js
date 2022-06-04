@@ -2,12 +2,13 @@ import { Route, Routes } from "react-router-dom";
 import Footer from "./Components/Fotoer";
 import Header from "./Header/Header";
 import Home from "./Pages/Home/Home";
-import Basics from "./Pages/Skills/Development/Child/Basics";
-import Frameworks from "./Pages/Skills/Development/Child/Frameworks";
+
 
 import Skills from "./Pages/Skills/Skills";
-import ReactTools from "./Pages/Skills/Development/Child/ReactTools";
-import Other from "./Pages/Skills/Development/Child/Other";
+
+import Projects from "./Pages/Projects/Projects";
+import About from "./Pages/About/About";
+import Contact from './Pages/Contact';
 
 function App() {
   return (
@@ -16,12 +17,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/skills" element={<Skills />}>
-          <Route path="development/basics" element={<Basics />} />
-          <Route path="development/frameworks" element={<Frameworks />} />
-          <Route path="development/tools" element={<ReactTools />} />
-          <Route path="others" element={<Other />} />
-        </Route>
+        <Route path="/skills" element={<Skills />}/>
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
       </Routes>
       <Footer />
     </div>

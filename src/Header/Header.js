@@ -6,11 +6,14 @@ import {
   Flex,
   Heading,
   HStack,
+  Icon,
   IconButton,
 } from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
 import Nav from "./Nav";
+import { AiFillGithub } from 'react-icons/ai';
+import { AiFillLinkedin } from 'react-icons/ai';
 
 const Header = () => {
   const [small, setSmall] = useState(false);
@@ -34,9 +37,28 @@ const Header = () => {
           </Center>
           {!small && <Nav small={small} />}
           <HStack>
-            <button className="hover:bg-yellow-300 shadow hover:shadow-md font-bold px-3 py-1 rounded-full">
-              <MoonIcon />
-            </button>
+            <IconButton
+              as={"a"}
+              target={"_blank"}
+              rel="noreferrer"
+              href="https://github.com/juelhossain"
+              size={"sm"}
+              icon={<AiFillGithub />}
+              className="hover:bg-yellow-300 shadow hover:shadow-md font-bold rounded-full"
+            ></IconButton>
+            <IconButton
+              as={"a"}
+              rel="noreferrer"
+              href="https://linkedin.com/in/juelhossainnn"
+              size={"sm"}
+              icon={<AiFillLinkedin />}
+              className="hover:bg-yellow-300 shadow hover:shadow-md font-bold rounded-full"
+            ></IconButton>
+            <IconButton
+              size={"sm"}
+              icon={<MoonIcon />}
+              className="hover:bg-yellow-300 shadow hover:shadow-md font-bold rounded-full"
+            ></IconButton>
           </HStack>
         </Flex>
       </Container>

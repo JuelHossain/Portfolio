@@ -11,6 +11,7 @@
     "@fontsource/lato": "^4.5.8",
     "@fontsource/open-sans": "^4.5.10",
     "@fontsource/raleway": "^4.5.8",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",

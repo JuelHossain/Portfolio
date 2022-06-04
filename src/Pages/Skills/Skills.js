@@ -1,16 +1,17 @@
 import React from "react";
 import { Container, Center } from "@chakra-ui/react";
 import {  useLocation } from "react-router-dom";
-import Development from "./Development/Development";
+import Development from "./Development";
 import { useEffect } from "react";
 import { useState } from "react";
-import Design from "./Design/Design";
-import Automation from "./Automation/Automation";
-import Computer from "./Computer/Computer";
+
+import Automation from "./Automation";
+import Computer from "./Computer";
 import { MdDeveloperMode} from 'react-icons/md'
 import { TbSettingsAutomation } from "react-icons/tb";
 import { SiMaterialdesignicons } from "react-icons/si";
 import { HiDesktopComputer } from "react-icons/hi";
+import Design from "./Design";
 
 const Skills = () => {
   const [dev, setDev] = useState(false);

@@ -1,59 +1,75 @@
-import { Container,  Heading, SimpleGrid } from '@chakra-ui/react';
+import { Button, Center, Container,  Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import React from 'react';
 
 import SkillsCard from './SkillsCard';
-import {DiReact} from 'react-icons/di'
+
+import {
+  SiExpress,
+  SiReact,
+  SiWebdriverio,
+  SiAdobeillustrator,
+  SiTailwindcss,
+} from "react-icons/si";
+
+import { Link } from 'react-router-dom';
+import { ArrowForwardIcon } from '@chakra-ui/icons';
 
 const SkillsOverView = () => {
     return (
       <Container maxW={"container.lg"}>
-        <Heading py={6} size={"md"} className="text-center">
+        <Heading size={"md"} className="text-center mt-12 mb-2">
           What I Know ?
         </Heading>
-        <hr className="mb-6 mx-60" />
 
-      <SimpleGrid columns={[2, 3, 4,5]} spacing="2">
+        <hr className="mb-6 mx-60 border-yellow-300" />
+
+        <SimpleGrid columns={[1, 2, 3, 4, 5]} spacing="2">
           <SkillsCard
-            photo={
-              "https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/777655/react-context-api-4929b3703a1a7082d99b53eb1bbfc31f.png"
-            }
+            bg={"bg-sky-400 hover:bg-sky-500"}
             title="React"
             text={"The Most Popular Javascript Library"}
-            icon={<DiReact />}
+            icon={<SiReact />}
           />
           <SkillsCard
-            photo={
-              "https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/777655/react-context-api-4929b3703a1a7082d99b53eb1bbfc31f.png"
-            }
+            bg={"bg-green-700 hover:bg-green-600"}
             title="Express Js"
             text={"Most Popular Node js Framework"}
-            icon={<DiReact />}
+            icon={<SiExpress />}
           />
           <SkillsCard
-            photo={
-              "https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/777655/react-context-api-4929b3703a1a7082d99b53eb1bbfc31f.png"
-            }
+            bg={"bg-orange-600 hover:bg-orange-500"}
             title="Web Driver IO"
             text={"Most Popular Javascript Automation Framework"}
-            icon={<DiReact />}
+            icon={<SiWebdriverio />}
           />
           <SkillsCard
-            photo={
-              "https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/777655/react-context-api-4929b3703a1a7082d99b53eb1bbfc31f.png"
-            }
+            bg={"bg-amber-900 hover:bg-amber-800"}
             title="Illustrator"
             text={"Industry Standard Illustration Tool."}
-            icon={<DiReact />}
+            icon={<SiAdobeillustrator />}
           />
           <SkillsCard
-            photo={
-              "https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/777655/react-context-api-4929b3703a1a7082d99b53eb1bbfc31f.png"
-            }
+            bg={"bg-sky-500 hover:bg-sky-400"}
             title="Tailwind Css"
             text={"The Most Popular Css Framework."}
-            icon={<DiReact />}
+            icon={<SiTailwindcss />}
           />
-            </SimpleGrid>
+          {/* <SkillsCard
+            bg={"bg-violet-600 hover:bg-rose-500"}
+            title="Nitro Typing."
+            text={"80+wpm Typing Speed."}
+            icon={<TiMessageTyping />}
+          /> */}
+        </SimpleGrid>
+        <Text fontSize={'sm'} className="rounded py-3 text-center my-3 bg-yellow-300">
+          Please Visit the skills sections to know .
+          <Link
+            className="underline"
+            to="/skills#root"
+          >
+            all the skills i have got &rarr;{" "}
+          </Link>
+        </Text>
       </Container>
     );
 };

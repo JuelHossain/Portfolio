@@ -71,7 +71,7 @@ const Footer = () => {
 
           <li>
             <a
-              href="/"
+              href="https://linkedin.com/in/juelhossainnn"
               rel="noopener noreferrer"
               target="_blank"
               className="text-gray-700 transition hover:text-gray-700/75"
