@@ -1,6 +1,6 @@
 import React from 'react';
 import { AiFillGithub } from 'react-icons/ai';
-import { Container, Image, VStack, Heading, Text, IconButton, HStack, Button, Box, Divider} from "@chakra-ui/react";
+import {  Image, VStack, Heading, Text, IconButton, HStack, Button, Box, Divider} from "@chakra-ui/react";
 const ProjectsCard = ({ name, title, about, screen, git, live, server }) => {
     
     return (
