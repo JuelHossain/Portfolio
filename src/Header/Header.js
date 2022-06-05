@@ -11,8 +11,8 @@ import {
 import React from "react";
 import { useState } from "react";
 import Nav from "./Nav";
-import { AiFillGithub } from 'react-icons/ai';
-import { AiFillLinkedin } from 'react-icons/ai';
+import { AiFillGithub } from "react-icons/ai";
+import { AiFillLinkedin } from "react-icons/ai";
 
 const Header = () => {
   const [small, setSmall] = useState(false);
@@ -43,7 +43,7 @@ const Header = () => {
               href="https://github.com/juelhossain"
               size={"sm"}
               icon={<AiFillGithub />}
-              className="hover:bg-yellow-300 shadow hover:shadow-md font-bold rounded-full"
+              className="hover:bg-yellow-400 shadow hover:shadow-md font-bold rounded-full"
             ></IconButton>
             <IconButton
               as={"a"}
@@ -51,12 +51,12 @@ const Header = () => {
               href="https://linkedin.com/in/juelhossainnn"
               size={"sm"}
               icon={<AiFillLinkedin />}
-              className="hover:bg-yellow-300 shadow hover:shadow-md font-bold rounded-full"
+              className="hover:bg-yellow-400 shadow hover:shadow-md font-bold rounded-full"
             ></IconButton>
             <IconButton
               size={"sm"}
               icon={<MoonIcon />}
-              className="hover:bg-yellow-300 shadow hover:shadow-md font-bold rounded-full"
+              className="hover:bg-yellow-400 shadow hover:shadow-md font-bold rounded-full"
             ></IconButton>
           </HStack>
         </Flex>

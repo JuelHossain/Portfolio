@@ -7,14 +7,14 @@ const Nav = ({ small }) => {
   if (small) {
     return (
       <HStack display={["flex", "flex", "none"]}>
-        {pages.map((page,index) => (
+        {pages.map((page, index) => (
           <NavLink
             key={index}
             to={`/${page}`}
             className={({ isActive }) =>
               isActive
-                ? "bg-yellow-300 shadow-md font-bold px-3 py-1 "
-                : "hover:bg-yellow-300 shadow hover:shadow-md font-bold px-3 py-1 "
+                ? "bg-yellow-400 shadow-md font-bold px-3 py-1 "
+                : "hover:bg-yellow-400 shadow hover:shadow-md font-bold px-3 py-1 "
             }
           >
             {page}
@@ -25,14 +25,14 @@ const Nav = ({ small }) => {
   } else {
     return (
       <HStack display={["none", "none", "flex"]}>
-        {pages.map((page,index) => (
+        {pages.map((page, index) => (
           <NavLink
             key={index}
             to={`/${page}`}
             className={({ isActive }) =>
               isActive
-                ? "bg-yellow-300 shadow-md font-bold px-3 py-1 "
-                : "hover:bg-yellow-300 shadow hover:shadow-md font-bold px-3 py-1 "
+                ? "bg-yellow-400 shadow-md font-bold px-3 py-1 "
+                : "hover:bg-yellow-400 shadow hover:shadow-md font-bold px-3 py-1 "
             }
           >
             {page}

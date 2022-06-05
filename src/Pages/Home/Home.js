@@ -1,5 +1,5 @@
 import React from 'react';
-import Contact from '../Contact';
+import Contact from '../Contact/Contact';
 import Projects from '../Projects/Projects';
 import Services from '../Services/Services';
 import Banner from './Banner';
@@ -12,7 +12,7 @@ const Home = () => {
             <Services />
             <SkillsOverView />
             <Projects home={true} size={2} />
-            <Contact/>
+            <Contact />
         </div>
     );
 };

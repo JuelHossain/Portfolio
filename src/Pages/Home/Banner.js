@@ -29,13 +29,14 @@ const Banner = () => {
     <Container maxW="container.lg" centerContent my={6}>
       <Flex direction={["column-reverse", "column-reverse", "row-reverse"]}>
         <Center
-          w={["auto", "auto", 400, 600]}
+          w={["auto", "auto",500,600]}
+          className='sm:flex-1'
           shadow={"base"}
           _hover={{ shadow: "md" }}
         >
           <VStack
             p="4"
-            w={["auto", "auto", 400, 600]}
+            w={["auto", "auto",500,600]}
             alignItems={["center", "center", "start"]}
           >
             <Heading
@@ -49,6 +50,7 @@ const Banner = () => {
               color={"red.500"}
               fontWeight="black"
               fontSize={["4xl", "5xl"]}
+              noOfLines={1}
             >
               {titles[index % titles.length]}
             </Heading>
