@@ -28,11 +28,11 @@ const ProjectsCard = ({ name, title, about, screen, git, live, server }) => {
                 href={git}
                 target={"_blank"}
                 icon={<AiFillGithub />}
-                className="bg-white shadow hover:bg-stone-900 hover:text-white"
+                className="bg-white shadow hover:bg-stone-900 hover:text-white dark:bg-gray-700 "
               />
              {server&& <Button
                 leftIcon={<AiFillGithub />}
-                className="bg-white shadow  hover:bg-stone-900 hover:text-white"
+                className="bg-white shadow  hover:bg-stone-900 hover:text-white dark:bg-gray-700"
                 as={"a"}
                 href={server}
               >
@@ -40,7 +40,7 @@ const ProjectsCard = ({ name, title, about, screen, git, live, server }) => {
               </Button>}
             </HStack>
             <Button
-              className="bg-white shadow hover:bg-red-500 hover:text-white"
+              className="bg-white shadow hover:bg-red-500 hover:text-white dark:bg-gray-700"
               as={"a"}
               href={live}
             >

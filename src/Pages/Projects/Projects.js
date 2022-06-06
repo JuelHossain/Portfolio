@@ -75,7 +75,7 @@ const Projects = ({ home, size }) => {
       {home && (
         <Text
           fontSize={"sm"}
-          className="rounded py-3 text-center my-3 bg-yellow-400"
+          className="rounded py-3 text-center my-3 bg-yellow-400 dark:bg-red-500"
         >
           Please Visit the Project sections to .
           <Link className="underline" to="/projects">

@@ -9,10 +9,13 @@ import Skills from "./Pages/Skills/Skills";
 import Projects from "./Pages/Projects/Projects";
 import About from "./Pages/About/About";
 import Contact from './Pages/Contact/Contact';
-import { ToastBar, Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
+import Nav from "./Header/Nav";
+import { Center } from "@chakra-ui/react";
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-zinc-50 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 relative">
+      
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -22,8 +25,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
       </Routes>
+      <Center className="sticky bottom-0 bg-zinc-50 dark:bg-zinc-900 p-2">
+        <Nav small={true} />
+      </Center>
       <Footer />
-      <Toaster position="top-right"/>
+      <Toaster position="top-right" />
     </div>
   );
 }

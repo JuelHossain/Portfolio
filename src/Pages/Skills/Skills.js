@@ -8,9 +8,6 @@ import { useState } from "react";
 import Automation from "./Automation";
 import Computer from "./Computer";
 import { MdDeveloperMode} from 'react-icons/md'
-import { TbSettingsAutomation } from "react-icons/tb";
-import { SiMaterialdesignicons } from "react-icons/si";
-import { HiDesktopComputer } from "react-icons/hi";
 import Design from "./Design";
 
 const Skills = () => {
@@ -49,63 +46,55 @@ const Skills = () => {
         break;
     }
   }, [hash]);
-  console.log(dev,'this is dev')
+  const pages = [
+    {
+      name: 'Development',
+      link: '#development',
+      matcher:dev
+   },
+    {
+      name: 'Automation',
+      link: '#automation',
+      matcher:automation
+   },
+    {
+      name: 'Design',
+      link: '#design',
+        matcher:design
+   },
+    {
+      name: 'Computer',
+      link: '#computer',
+        matcher:computer
+   },
+ ]
+
   return (
     <Container maxW={"container.lg"} className="my-2 scroll-smooth relative ">
+      <Center
+        className={
+          "gap-2 p-2 shadow bg-zinc-50 dark:bg-zinc-900  border-indigo-400 sticky top-10 z-10  "
+        }
+      >
+        {pages.map((page, index) => (
+          <a
+            key={index}
+            href={page.link}
+            className={
+              page.matcher
+                ? "bg-indigo-600 text-zinc-50 shadow font-bold px-3 py-1 dark:shadow-gray-700 "
+                : "hover:bg-indigo-600 hover:text-zinc-50 shadow hover:shadow-md font-bold px-3 py-1 dark:shadow-gray-700 "
+            }
+          >
+            <p className="hidden md:block">{page.name}</p>
+            <MdDeveloperMode className="md:hidden text-2xl" />
+          </a>
+        ))}
+      </Center>
       <Development />
       <Automation />
       <Design />
       <Computer />
-      <Center
-        className={
-          "gap-2 p-2 shadow bg-white border-indigo-400 sticky bottom-0 right-0"
-        }
-      >
-        <a
-          href="#development"
-          className={
-            dev
-              ? "bg-indigo-600 text-stone-200 shadow-md font-bold px-3 py-1 "
-              : "hover:bg-indigo-600 bg-white hover:text-stone-200 shadow hover:shadow-md font-bold px-3 py-1 "
-          }
-        >
-          <p className="hidden md:block">Development</p>{" "}
-          <MdDeveloperMode className="md:hidden text-5xl p-2" />
-        </a>
-        <a
-          href="#automation"
-          className={
-            automation
-              ? "bg-indigo-600 text-stone-200 shadow-md font-bold px-3 py-1 "
-              : "hover:bg-indigo-600 bg-white hover:text-stone-200 shadow hover:shadow-md font-bold px-3 py-1 "
-          }
-        >
-          <p className="hidden md:block">Automation</p>{" "}
-          <TbSettingsAutomation className="md:hidden text-5xl p-2" />
-        </a>
-        <a
-          href="#design"
-          className={
-            design
-              ? "bg-indigo-600 text-stone-200 shadow-md font-bold px-3 py-1 "
-              : "hover:bg-indigo-600 bg-white hover:text-stone-200 shadow hover:shadow-md font-bold px-3 py-1 "
-          }
-        >
-          <p className="hidden md:block">Graphic Design</p>{" "}
-          <SiMaterialdesignicons className="md:hidden text-5xl p-3" />
-        </a>
-        <a
-          href="#computer"
-          className={
-            computer
-              ? "bg-indigo-600 text-stone-200 shadow-md font-bold px-3 py-1 "
-              : "hover:bg-indigo-600 bg-white hover:text-stone-200 shadow hover:shadow-md font-bold px-3 py-1 "
-          }
-        >
-          <p className="hidden md:block">Basic Computer</p>{" "}
-          <HiDesktopComputer className="md:hidden text-5xl p-2" />
-        </a>
-      </Center>
     </Container>
   );
 };

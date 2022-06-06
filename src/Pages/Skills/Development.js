@@ -7,7 +7,7 @@ import SkillsBox from "./SkillsBox";
 import SkillsCard from "./SkillsCard";
 const Development = () => {
   return (
-    <div id="development relative">
+    <div id="development">
       <Heading size={"md"} className={"mt-6 mb-2"}>
         Development Skills
       </Heading>

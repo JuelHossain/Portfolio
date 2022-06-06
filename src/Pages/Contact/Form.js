@@ -26,7 +26,7 @@ const Form = () => {
   const {
     handleSubmit,
     register,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
   } = useForm();
 
   // on submit handle
@@ -53,10 +53,10 @@ const Form = () => {
     );
   }
   return (
-    <div className=" sm:w-1/2 bg-white flex flex-col md:ml-auto w-full  mt-8 md:mt-0 shadow-md p-2 rounded-lg">
+    <div className=" sm:w-1/2 dark:shadow-gray-700 flex flex-col md:ml-auto w-full  mt-8 md:mt-0 shadow-md p-2 rounded-lg bg-zinc-50 dark:bg-gray-800">
       <Heading size={"md"}>Contact Me</Heading>
-      <Divider className="border-yellow-400 my-1" />
-      <Text className="leading-relaxed mb-5 text-gray-600">
+      <Divider className="border-yellow-400 dark:border-red-500 my-1" />
+      <Text className="leading-relaxed mb-5 ">
         Please Send Me a Written Message here,
       </Text>
 
@@ -122,7 +122,7 @@ const Form = () => {
         <Button
           isLoading={isSubmitting}
           type="submit"
-          className="bg-yellow-400 hover:bg-sky-500 hover:text-white"
+          className="bg-yellow-400 dark:bg-red-500 hover:bg-sky-500 hover:text-white"
         >
           Send
         </Button>

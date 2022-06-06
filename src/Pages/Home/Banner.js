@@ -1,7 +1,6 @@
 import { DownloadIcon,  } from "@chakra-ui/icons";
 import {
   Image,
-
   Center,
   Container,
   Flex,
@@ -10,49 +9,26 @@ import {
   Heading,
 
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
 import MyButton from "../../Components/MyButton";
 import me from "../../assets/me.png";
 import cv from '../../assets/Resume of Juel Hossain.pdf'
+import ReactTyped from "react-typed";
 const Banner = () => {
-  var titles = ["Web Developer", "Web Designer", "Graphic Designer"];
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const tick = () => setIndex((i) => i + 1);
-    const id = setInterval(tick, 3000);
-    return () => clearInterval(id);
-  }, []);
-
+  var titles = ["Web Developer", "Web Designer", "Graphic Designer","Programmer","Automation boy","Fullstack Developer","MernStack Developer"];
 
   return (
-    <Container maxW="container.lg" centerContent my={6}>
+    <Container maxW="container.lg" my={6}>
       <Flex direction={["column-reverse", "column-reverse", "row-reverse"]}>
-        <Center
-          w={["auto", "auto",500,600]}
-          className='sm:flex-1'
-          shadow={"base"}
-          _hover={{ shadow: "md" }}
-        >
-          <VStack
-            p="4"
-            w={["auto", "auto",500,600]}
-            alignItems={["center", "center", "start"]}
-          >
-            <Heading
-              color={"red.900"}
-              fontWeight="black"
-              fontSize={["4xl", "5xl"]}
-            >
+        <Center className="flex-1 shadow hover:shadow-md dark:shadow-gray-700">
+          <VStack p="4" alignItems={["center", "center", "start"]}>
+            <Heading className="text-4xl sm:text-5xl font-extrabold sm:font-black ">
               Juel Hossain
             </Heading>
             <Heading
-              color={"red.500"}
-              fontWeight="black"
-              fontSize={["4xl", "5xl"]}
+              className="text-4xl sm:text-5xl font-extrabold sm:font-black text-red-500 py-1 "
               noOfLines={1}
             >
-              {titles[index % titles.length]}
+              <ReactTyped strings={titles} typeSpeed={80} backSpeed={50} loop />
             </Heading>
             <Text textAlign={["center", "center", "left"]}>
               Hey, Hi. Welcome to My site. Please Go Ahead And Explore More
@@ -61,24 +37,15 @@ const Banner = () => {
             <MyButton
               text={"Download CV"}
               icon={<DownloadIcon mx="2px" />}
-              link={
-                cv
-              }
+              link={cv}
             />
           </VStack>
         </Center>
         <Center
-          w={["auto", "auto", 400]}
-          shadow="base"
-          _hover={{ shadow: "md" }}
+          w={["auto", "auto", 350, 400]}
+          className="shadow hover:shadow-md dark:shadow-gray-700"
         >
-          <Image
-            width={"400px"}
-            height={[300, 350]}
-            fit={"cover"}
-            src={me}
-            align="top"
-          ></Image>
+          <Image className="w-auto" fit={"cover"} src={me} align="top"></Image>
         </Center>
       </Flex>
     </Container>

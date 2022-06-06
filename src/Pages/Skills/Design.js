@@ -7,7 +7,7 @@ import SkillsCard from "./SkillsCard";
 
 const Design = () => {
   return (
-    <div id="computer">
+    <div id="design">
       <Heading size={"md"} className="my-6">
         Design Skills.
       </Heading>

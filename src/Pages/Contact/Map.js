@@ -7,7 +7,7 @@ import { BiPhoneOutgoing } from "react-icons/bi";
 const Map = () => {
   return (
     <div
-      className={` rounded-lg w-full h-80 sm:w-1/2 sm:h-auto flex items-end pt-10 justify-end  shadow-md bg-contact bg-center bg-no-repeat bg-cover gap-2 p-2`}
+      className={` rounded-lg w-full h-80 sm:w-1/2 sm:h-auto flex items-end pt-10 justify-end  shadow-md bg-contact bg-center bg-no-repeat bg-cover gap-2 p-2 dark:bg-contactdark dark:shadow-gray-700`}
     >
       <Circle
         as={"a"}

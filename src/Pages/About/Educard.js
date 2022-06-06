@@ -3,7 +3,7 @@ import React from 'react';
 const Educard = ( {instName,title,grade,duration}) => {
     return (
       <div class="flex items-start ">
-        <span class="flex-shrink-0 p-4 bg-gray-100 rounded-lg">
+        <span class="flex-shrink-0 p-4 bg-gray-100 dark:bg-gray-900 rounded-lg">
           <svg
             class="w-5 h-5"
             fill="none"
@@ -27,10 +27,10 @@ const Educard = ( {instName,title,grade,duration}) => {
                 <hr className='border-red-300'/>
           <h3 class="text-md font-semibold mt-1">{instName}</h3>
 
-          <p class="mt-1 text-sm text-gray-700">
+          <p class="mt-1 text-sm ">
             {grade}
           </p>
-          <p class="mt-1 text-sm text-gray-700">
+          <p class="mt-1 text-sm ">
             {duration}
           </p>
         </div>

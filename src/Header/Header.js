@@ -1,4 +1,4 @@
-import { HamburgerIcon, MoonIcon } from "@chakra-ui/icons";
+import {MoonIcon } from "@chakra-ui/icons";
 import {
   Box,
   Center,
@@ -8,33 +8,49 @@ import {
   HStack,
   IconButton,
 } from "@chakra-ui/react";
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "./Nav";
 import { AiFillGithub } from "react-icons/ai";
 import { AiFillLinkedin } from "react-icons/ai";
 
+
 const Header = () => {
-  const [small, setSmall] = useState(false);
+  const [dark, setDark] = useState(false);
+  useEffect(() => {
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  },[dark])
   return (
-    <Box as="header" my={2} bg="white" p={1} className="sticky top-0 z-40">
-      <Container maxW={"container.lg"}>
+    <Box
+      as="header"
+      my={2}
+      p={1}
+      className="sticky top-0 z-40 bg-zinc-50 dark:bg-zinc-900"
+    >
+      <Container maxW={"container.lg"} className="relative">
+        {/* <Circle
+          className="absolute  -bottom-2 right-40"
+       onClick={() => {
+            setSmall(!small);
+          }}>
+          <IoIosArrowDropdown className="text-xl"/>
+        </Circle> */}
         <Flex gap={4} justify="space-between">
-          <IconButton
-            onClick={() => {
-              setSmall(!small);
-            }}
-            _focus={{ border: "none" }}
-            display={["block", "block", "none"]}
-            variant={"ghost"}
-            icon={<HamburgerIcon />}
-          />
           <Center>
-            <Heading id="logo" ml={2} size="md">
+            <Heading
+              as="a"
+              href="/"
+              id="logo"
+              size="lg"
+              className="text-zinc-900 dark:text-zinc-100"
+            >
               Juel Hossain
             </Heading>
           </Center>
-          {!small && <Nav small={small} />}
+          <Nav />
           <HStack>
             <IconButton
               as={"a"}
@@ -43,7 +59,7 @@ const Header = () => {
               href="https://github.com/juelhossain"
               size={"sm"}
               icon={<AiFillGithub />}
-              className="hover:bg-yellow-400 shadow hover:shadow-md font-bold rounded-full"
+              className="hover:bg-yellow-400 shadow hover:shadow-md font-bold rounded-full dark:bg-gray-700 dark:text-white"
             ></IconButton>
             <IconButton
               as={"a"}
@@ -51,23 +67,26 @@ const Header = () => {
               href="https://linkedin.com/in/juelhossainnn"
               size={"sm"}
               icon={<AiFillLinkedin />}
-              className="hover:bg-yellow-400 shadow hover:shadow-md font-bold rounded-full"
+              className="hover:bg-yellow-400 shadow hover:shadow-md font-bold rounded-full dark:bg-gray-700 dark:text-white"
             ></IconButton>
             <IconButton
+              onClick={() => {
+                setDark(!dark);
+              }}
               size={"sm"}
               icon={<MoonIcon />}
-              className="hover:bg-yellow-400 shadow hover:shadow-md font-bold rounded-full"
+              className="hover:bg-yellow-400 shadow hover:shadow-md font-bold rounded-full dark:bg-gray-700 dark:text-white"
             ></IconButton>
           </HStack>
         </Flex>
       </Container>
-      {small && (
+      {/* {small && (
         <Container maxW={"container.lg"}>
           <Center gap={4} justify="space-between">
             {small && <Nav small={small} />}
           </Center>
         </Container>
-      )}
+      )} */}
     </Box>
   );
 };

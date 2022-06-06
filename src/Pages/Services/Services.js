@@ -21,7 +21,7 @@ const Services = () => {
           rating="4.9"
         />
         <ServicesCard
-          sp={"bg-yellow-400"}
+          sp={"bg-yellow-400 dark:bg-red-500"}
           icon={<CgWebsite />}
           title="FullStack Website "
           text={

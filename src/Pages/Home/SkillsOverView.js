@@ -62,7 +62,7 @@ const SkillsOverView = () => {
       </SimpleGrid>
       <Text
         fontSize={"sm"}
-        className="rounded py-3 text-center my-3 bg-yellow-400"
+        className="rounded py-3 text-center my-3 bg-yellow-400 dark:bg-red-500"
       >
         Please Visit the skills sections to know .
         <Link className="underline" to="/skills#root">

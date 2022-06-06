@@ -5,14 +5,14 @@ import Educard from './Educard';
 const Education = ({edu,name,title}) => {
 
     return (
-      <Container maxW='container.lg' class="text-gray-900 bg-gray-100 rounded-lg mb-8">
+      <Container maxW='container.lg' class=" bg-gray-100 dark:bg-gray-700 rounded-lg mb-8">
         <div class="max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
           <div class="max-w-xl">
             <h2 class="text-3xl font-bold ">
               {name}
             </h2>
 
-            <p class="mt-4 text-gray-700">
+            <p class="mt-4">
                        {title}
             </p>
           </div>
