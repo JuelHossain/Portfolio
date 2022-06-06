@@ -4,7 +4,7 @@ const ServicesCard = ({ sp, icon, title, text, rating, ...props }) => {
   return (
     <div
       {...props}
-      className={`${sp} relative block p-8 hover:shadow-md shadow rounded-xl hover:bg-yellow-400 dark:hover:bg-red-500  dark:shadow-gray-700 `}
+      className={`${sp} relative block p-8 hover:shadow-md shadow rounded-xl hover:bg-yellow-400 dark:hover:bg-red-500  dark:shadow-gray-700 dark:bg-gray-800 `}
     >
       <span className="absolute right-4 top-4 rounded-full px-3 py-1.5 bg-green-100 text-green-600 font-medium text-xs">
         {rating}

@@ -4,7 +4,7 @@ import {  Image, VStack, Heading, Text, IconButton, HStack, Button, Box, Divider
 const ProjectsCard = ({ name, title, about, screen, git, live, server }) => {
     
     return (
-      <Box  className=" rounded relative block ">
+      <Box  className=" rounded relative block dark:bg-gray-800">
         <Box className=" rounded h-96 sm:h-72 md:h-60 overflow-auto">
           <Image
             alt="screenshot"

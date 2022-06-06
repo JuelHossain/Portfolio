@@ -14,7 +14,7 @@ import me from "../../assets/me.png";
 import cv from '../../assets/Resume of Juel Hossain.pdf'
 import ReactTyped from "react-typed";
 const Banner = () => {
-  var titles = ["Web Developer", "Web Designer", "Graphic Designer","Programmer","Automation boy","Fullstack Developer","MernStack Developer"];
+  var titles = ["Web Developer", "Web Designer", "Graphic Designer","Programmer","Automation boy"];
 
   return (
     <Container maxW="container.lg" my={6}>

@@ -4,10 +4,10 @@ import me from '../../assets/me.png'
 const Head = () => {
     return (
       <div class="max-w-5xl  py-8 mx-auto">
-        <section class="p-8 bg-gray-100 dark:bg-gray-700 rounded-lg">
+        <section class="p-8 bg-gray-100 dark:bg-gray-800 rounded-lg">
           <div class="grid grid-cols-1 gap-12 sm:grid-cols-3 sm:items-center">
             <div class="relative">
-              <div class="aspect-w-1 aspect-h-1">
+              <div class="aspect-w-1 aspect-h-1 ring rounded">
                 <img
                   src={me}
                   alt=""

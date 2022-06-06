@@ -4,12 +4,13 @@ import {  useLocation } from "react-router-dom";
 import Development from "./Development";
 import { useEffect } from "react";
 import { useState } from "react";
-
+import { MdOutlineDesignServices, } from "react-icons/md";
 import Automation from "./Automation";
 import Computer from "./Computer";
 import { MdDeveloperMode} from 'react-icons/md'
 import Design from "./Design";
-
+import { TbSettingsAutomation } from "react-icons/tb";
+import { HiDesktopComputer } from "react-icons/hi";
 const Skills = () => {
   const [dev, setDev] = useState(false);
   const [automation, setAutomation] = useState(false);
@@ -48,26 +49,30 @@ const Skills = () => {
   }, [hash]);
   const pages = [
     {
-      name: 'Development',
-      link: '#development',
-      matcher:dev
-   },
+      name: "Development",
+      link: "#development",
+      matcher: dev,
+      icon: <MdDeveloperMode className="md:hidden text-2xl " />,
+    },
     {
-      name: 'Automation',
-      link: '#automation',
-      matcher:automation
-   },
+      name: "Automation",
+      link: "#automation",
+      matcher: automation,
+      icon: <TbSettingsAutomation className="md:hidden text-2xl" />,
+    },
     {
-      name: 'Design',
-      link: '#design',
-        matcher:design
-   },
+      name: "Design",
+      link: "#design",
+      matcher: design,
+      icon: <MdOutlineDesignServices className="md:hidden text-2xl" />,
+    },
     {
-      name: 'Computer',
-      link: '#computer',
-        matcher:computer
-   },
- ]
+      name: "Computer",
+      link: "#computer",
+      matcher: computer,
+      icon:<HiDesktopComputer className="md:hidden text-2xl"/>
+    },
+  ];
 
   return (
     <Container maxW={"container.lg"} className="my-2 scroll-smooth relative ">
@@ -87,7 +92,7 @@ const Skills = () => {
             }
           >
             <p className="hidden md:block">{page.name}</p>
-            <MdDeveloperMode className="md:hidden text-2xl" />
+           {page.icon}
           </a>
         ))}
       </Center>
