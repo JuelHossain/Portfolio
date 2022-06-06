@@ -25,7 +25,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
       </Routes>
-      <Center className="sticky bottom-0 bg-zinc-50 dark:bg-zinc-900 p-2">
+      <Center className="sticky bottom-0 bg-zinc-50 dark:bg-zinc-900 p-2 z-40">
         <Nav small={true} />
       </Center>
       <Footer />
