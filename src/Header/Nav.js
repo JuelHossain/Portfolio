@@ -36,15 +36,15 @@ const Nav = ({ small }) => {
   ];
   if (small) {
     return (
-      <HStack display={["flex", "flex", "none"]}>
+      <HStack display={["flex", "flex", "none"]} className=" w-full">
         {pages.map((page, index) => (
           <NavLink
             key={index}
             to={page.link}
             className={({ isActive }) =>
               isActive
-                ? "bg-yellow-400 shadow-md font-bold px-3 py-1 dark:text-zinc-900  flex flex-col items-center sm:flex-row sm:gap-2"
-                : "hover:bg-yellow-400 shadow hover:shadow-md font-bold px-3 py-1 dark:text-zinc-50 dark:hover:text-zinc-900 dark:bg-gray-700 dark:shadow-gray-700 flex flex-col items-center sm:flex-row sm:gap-2"
+                ? "bg-yellow-400 shadow-md font-bold py-1 dark:text-zinc-900  flex flex-col items-center sm:flex-row sm:gap-2 flex-1 sm:items-center sm:justify-center"
+                : "hover:bg-yellow-400 shadow hover:shadow-md font-bold  py-1 dark:text-zinc-50 dark:hover:text-zinc-900 dark:bg-gray-700 dark:shadow-gray-700 flex flex-col items-center sm:flex-row sm:gap-2 flex-1 sm:items-center sm:justify-center"
             }
           >
             {page.icon}

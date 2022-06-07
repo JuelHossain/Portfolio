@@ -53,12 +53,12 @@ const Footer = () => {
         </p>
         <ul className="flex justify-center gap-6 md:gap-8">
           {socs.map((soc, index) => (
-            <li>
+            <li key={index}>
               <a
                 href={soc.link}
                 rel="noopener noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:text-gray-700/75"
+                className="text-gray-400 transition hover:text-gray-700/75"
               >
                 <span className="sr-only">{soc.name}</span>
                 {soc.icon}
