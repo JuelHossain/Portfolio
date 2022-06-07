@@ -19,8 +19,8 @@ const Education = ({edu,name,title}) => {
 
           <div class="grid grid-cols-1 gap-8 mt-8 md:gap-12 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
                     {edu?.sort().map(ed => {
-                        const { insName, title, grade, duration } = ed ?? {};
-                        return <Educard instName={insName} title={title} grade={grade} duration={duration}/>
+                        const { insName, title, grade, duration,web,text } = ed ?? {};
+                      return <Educard instName={insName} title={title} grade={grade} duration={duration} web={web} text={text} />
             })}
           </div>
         </div>

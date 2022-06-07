@@ -1,6 +1,7 @@
+import { Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Stack } from '@chakra-ui/react';
 import React from 'react';
 
-const Educard = ( {instName,title,grade,duration}) => {
+const Educard = ({ instName, title, grade, duration,web,text}) => {
     return (
       <div class="flex items-start ">
         <span class="flex-shrink-0 p-4 bg-gray-100 dark:bg-gray-900 rounded-lg">
@@ -23,16 +24,47 @@ const Educard = ( {instName,title,grade,duration}) => {
         </span>
 
         <div class="ml-4">
-                <h2 class="text-lg font-bold">{title}</h2>
-                <hr className='border-red-300'/>
-          <h3 class="text-md font-semibold mt-1">{instName}</h3>
-
-          <p class="mt-1 text-sm ">
-            {grade}
-          </p>
-          <p class="mt-1 text-sm ">
-            {duration}
-          </p>
+          <h2 class="text-lg font-bold">{title}</h2>
+          <hr className="border-red-300" />
+          {/* <a
+            href={web}
+            target='_blank'
+            rel='noreferrer'
+            class="text-md font-semibold mt-1 cursor-pointer hover:text-blue-600 ease-linear duration-150 "
+          >
+            {instName}
+          </a> */}
+          <Popover placement="bottom-start">
+            <PopoverTrigger>
+              <h3 class="text-md font-semibold mt-1 cursor-pointer">
+                {instName}
+              </h3>
+            </PopoverTrigger>
+            <PopoverContent>
+              <PopoverHeader fontWeight="semibold">{instName}</PopoverHeader>
+              <PopoverArrow />
+              <PopoverCloseButton />
+              <PopoverBody>
+                <Stack>
+                  <p>{text}</p>
+                
+                  {web && <a
+                    variant={'ghost'}
+                    as={'a'}
+                      href={web}
+                      target="_blank"
+                    rel="noreferrer"
+                    className='text-right inline text-blue-500 '
+                    >
+                      Know More.
+                    </a>}
+                 
+                </Stack>
+              </PopoverBody>
+            </PopoverContent>
+          </Popover>
+          <p class="mt-1 text-sm ">{grade}</p>
+          <p class="mt-1 text-sm ">{duration}</p>
         </div>
       </div>
     );
