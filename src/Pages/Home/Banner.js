@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import MyButton from "../../Components/MyButton";
 import me from "../../assets/me.png";
-import cv from '../../assets/Resume of Juel Hossain.pdf'
+
 import ReactTyped from "react-typed";
 const Banner = () => {
   var titles = ["Web Developer", "Web Designer", "Graphic Designer","Programmer","Automation boy"];
@@ -37,7 +37,7 @@ const Banner = () => {
             <MyButton
               text={"Download CV"}
               icon={<DownloadIcon mx="2px" />}
-              link={cv}
+              link=''
             />
           </VStack>
         </Center>
