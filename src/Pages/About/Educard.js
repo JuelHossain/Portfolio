@@ -40,7 +40,7 @@ const Educard = ({ instName, title, grade, duration,web,text}) => {
                 {instName}
               </h3>
             </PopoverTrigger>
-            <PopoverContent>
+            <PopoverContent className='dark:bg-gray-200'>
               <PopoverHeader fontWeight="semibold">{instName}</PopoverHeader>
               <PopoverArrow />
               <PopoverCloseButton />
