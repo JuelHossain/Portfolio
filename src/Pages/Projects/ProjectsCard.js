@@ -5,7 +5,7 @@ const ProjectsCard = ({ name, title, about, screen, git, live, server }) => {
     
     return (
       <Box  className=" rounded relative block dark:bg-gray-800">
-        <Box className=" rounded h-96 sm:h-72 md:h-60 hover:overflow-auto">
+        <Box className=" rounded h-96 sm:h-72 md:h-60 hover:overflow-auto overflow-hidden">
           <Image
             alt="screenshot"
             className=" object-cover object-top w-full "
@@ -17,10 +17,10 @@ const ProjectsCard = ({ name, title, about, screen, git, live, server }) => {
           <VStack className="items-start my-5 pl-4">
             <Heading size={"md"}> {name}</Heading>
             <Heading  size={"sm"}> {title}</Heading>
-            <Text className="h-32 hover:overflow-auto">{about}</Text>
+            <Text className="h-32 hover:overflow-auto text-clip overflow-hidden">{about}</Text>
           </VStack>
           <Divider />
-          <HStack className="justify-between">
+          <HStack className="">
             <HStack>
               {" "}
               <IconButton
