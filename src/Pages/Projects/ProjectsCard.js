@@ -4,20 +4,20 @@ import {  Image, VStack, Heading, Text, IconButton, HStack, Button, Box, Divider
 const ProjectsCard = ({ name, title, about, screen, git, live, server }) => {
     
     return (
-      <Box  className=" rounded relative block dark:bg-gray-800">
-        <Box className=" rounded h-96 sm:h-72 md:h-60 hover:overflow-auto overflow-hidden">
+      <Box  className=" rounded relative  dark:bg-gray-800 flex md:h-96 shadow-md border flex-col md:flex-row">
+        <Box className=" rounded-l md:h-full hover:overflow-auto overflow-hidden md:flex-1 md:basis-1/2 h-60 sm:h-80">
           <Image
             alt="screenshot"
-            className=" object-cover object-top w-full "
+            className="object-top w-full "
             src={screen}
           />
         </Box>
 
-        <Box className=" rounded shadow">
-          <VStack className="items-start my-5 pl-4">
+        <Box className=" rounded shadow md:flex-1 md:basis-1/2 md:p-10 p-4 justify-between gap-5 flex flex-col">
+          <VStack className="items-start gap-1">
             <Heading size={"md"}> {name}</Heading>
             <Heading  size={"sm"}> {title}</Heading>
-            <Text className="h-32 hover:overflow-auto text-clip overflow-hidden">{about}</Text>
+            <Text className="md:h-36 hover:overflow-auto text-clip overflow-hidden">{about}</Text>
           </VStack>
           <Divider />
           <HStack className="">

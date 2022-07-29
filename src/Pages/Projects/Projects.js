@@ -54,7 +54,7 @@ const Projects = ({ home, size }) => {
         Projects I have done.
       </Heading>
       <hr className="mb-6 mx-40 border-yellow-400" />
-      <SimpleGrid columns={[1, 1, 2]} spacing="5">
+      <SimpleGrid columns={1} spacing="10">
         {projects.slice(0, size).map((project, index) => {
           const { screen, name, title, about, git, server, live } =
             project ?? {};
