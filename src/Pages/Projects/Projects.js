@@ -1,12 +1,12 @@
-import { Container, SimpleGrid, Text } from "@chakra-ui/react";
+import { Container, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
-import { Heading } from "@chakra-ui/react";
-import ProjectsCard from "./ProjectsCard";
+import { Link } from "react-router-dom";
 import efruits from "../../assets/screencapture-efruitsmanager-web-app-2022-06-04-14_10_08.png";
 import screw from "../../assets/screencapture-screw-inc-web-app-2022-06-04-13_54_19.png";
-import tourboy from "../../assets/screencapture-tourboy-web-app-2022-06-04-14_26_23.png";
 import superhero from "../../assets/screencapture-superheroshop-netlify-app-2022-06-04-14_36_17.png";
-import { Link } from "react-router-dom";
+import tourboy from "../../assets/screencapture-tourboy-web-app-2022-06-04-14_26_23.png";
+import useProjects from './../../Hooks/useProjects';
+import ProjectsCard from "./ProjectsCard";
 const Projects = ({ home, size }) => {
   const projects = [
     {
@@ -48,6 +48,8 @@ const Projects = ({ home, size }) => {
       live: "https://superheroshop.netlify.app/",
     },
   ];
+    const data = useProjects();
+  console.log(data)
   return (
     <Container maxW={"container.lg"} className="my-6">
       <Heading size={"md"} className="text-center mt-12 mb-2">

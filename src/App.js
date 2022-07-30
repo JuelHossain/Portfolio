@@ -6,15 +6,20 @@ import Home from "./Pages/Home/Home";
 
 import Skills from "./Pages/Skills/Skills";
 
-import Projects from "./Pages/Projects/Projects";
-import About from "./Pages/About/About";
-import Contact from './Pages/Contact/Contact';
+import { Center } from "@chakra-ui/react";
 import { Toaster } from "react-hot-toast";
 import Nav from "./Header/Nav";
-import { Center } from "@chakra-ui/react";
+import About from "./Pages/About/About";
+import Login from "./Pages/Admin/Login";
+import Contact from './Pages/Contact/Contact';
+import Projects from "./Pages/Projects/Projects";
+import { useState } from "react";
+import { AdminProvider } from "./context/AdminContext";
 function App() {
+  const [admin, setAdmin] = useState(false);
   return (
-    <div className="min-h-screen flex flex-col bg-zinc-50 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 relative">
+    <AdminProvider value={{admin,setAdmin}}>
+      <div className="min-h-screen flex flex-col bg-zinc-50 dark:bg-zinc-900 text-gray-900 dark:text-zinc-200 relative">
       
       <Header />
       <Routes>
@@ -24,6 +29,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/maintenance" element={<Login/>}/>
       </Routes>
       <Center className="sticky bottom-0 bg-zinc-50 dark:bg-zinc-900 p-2 z-40 w-full">
         <Nav small={true} />
@@ -31,6 +37,7 @@ function App() {
       <Footer />
       <Toaster position="top-right" />
     </div>
+    </AdminProvider>
   );
 }
 
