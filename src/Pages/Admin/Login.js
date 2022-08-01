@@ -1,60 +1,77 @@
-import { Box, Button, Container, Flex, FormControl, Input, Stack, useColorModeValue } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
-import { useAdmin } from './../../context/AdminContext';
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  FormControl,
+  Input,
+  Stack,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+// import { useNavigate } from "react-router-dom";
+import useAdmin from "../../Hooks/useAdmin";
 
 const Login = () => {
-    const [password, setPassword] = useState('');
-    const { admin, setAdmin } = useAdmin();
-    useEffect(() => {
-        console.log(admin)
-    },[admin])
-
-    const login = async(e) => {
-        e.preventDefault();
-        const res = await fetch('http://localhost:5000/admin', {
-            headers: {
-                password,
-                secret:'true'
-            }
-        })
-        // const data = await res.json();
-        const data = await res.json();
-        console.log('this is data', data);
-        setAdmin(data);
-        
+  const [password, setPassword] = useState("");
+  const { status, getStatus, updateStatus, refetch } = useAdmin();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (status) {
+      navigate("/");
     }
-    return (
+  });
+  const login = async (e) => {
+    e.preventDefault();
+    const { matched } = await getStatus(password);
+    if (matched) {
+      await updateStatus(true);
+      sessionStorage.setItem("admin", true);
+      refetch();
+    } else {
+      await updateStatus(false);
+      refetch();
+    }
+  };
+  return (
     <Container>
-    <Flex
-      minH={'80vh'}
-      align={'center'}
-      justify={'center'}
-      bg={useColorModeValue('gray.50', 'gray.800')}>
-      <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
-        <Box
-          rounded={'lg'}
-          bg={useColorModeValue('white', 'gray.700')}
-          boxShadow={'lg'}
-          p={8}>
-          <Stack spacing={4} as={'form'} onSubmit={login}>
-            <FormControl id="password">
-                                <Input type="password" value={password} onChange={(e) => {
-                                    setPassword(e.target.value);
-                                }} />
-            </FormControl>
-                            <Button
-                                type='submit'
-                bg={'blue.400'}
-                color={'white'}
+      <Flex
+        minH={"80vh"}
+        align={"center"}
+        justify={"center"}
+        bg={useColorModeValue("gray.50", "gray.800")}
+      >
+        <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
+          <Box
+            rounded={"lg"}
+            bg={useColorModeValue("white", "gray.700")}
+            boxShadow={"lg"}
+            p={8}
+          >
+            <Stack spacing={4} as={"form"} onSubmit={login}>
+              <FormControl id="password">
+                <Input
+                  type="password"
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                />
+              </FormControl>
+              <Button
+                type="submit"
+                bg={"blue.400"}
+                color={"white"}
                 _hover={{
-                  bg: 'blue.500',
-                }}>
-              </Button>
+                  bg: "blue.500",
+                }}
+              ></Button>
             </Stack>
-        </Box>
-      </Stack>
-        </Flex>
-        </Container>
+          </Box>
+        </Stack>
+      </Flex>
+    </Container>
   );
 };
 

@@ -1,12 +1,14 @@
 import { HStack } from "@chakra-ui/react";
 import React from "react";
-import { NavLink } from "react-router-dom";
-import {AiFillHome}from 'react-icons/ai'
-import { CgEditUnmask } from "react-icons/cg";
-import { AiFillProject } from "react-icons/ai";
+import { AiFillHome, AiFillProject } from "react-icons/ai";
 import { BsFillExclamationSquareFill } from "react-icons/bs";
+import { CgEditUnmask } from "react-icons/cg";
 import { GrContact } from "react-icons/gr";
+import { NavLink } from "react-router-dom";
+import useAdmin from './../Hooks/useAdmin';
+import Logout from "./Logout";
 const Nav = ({ small }) => {
+  const { status } = useAdmin();
   const pages = [
     {
       name: "Home",
@@ -26,12 +28,12 @@ const Nav = ({ small }) => {
     {
       name: "About",
       link: "/about",
-      icon: <BsFillExclamationSquareFill className="text-sm"/>,
+      icon: <BsFillExclamationSquareFill className="text-sm" />,
     },
     {
       name: "Contact",
       link: "/contact",
-      icon: <GrContact className="text-sm"/>,
+      icon: <GrContact className="text-sm" />,
     },
   ];
   if (small) {
@@ -47,10 +49,11 @@ const Nav = ({ small }) => {
                 : "hover:bg-yellow-400 shadow hover:shadow-md font-bold  py-1 dark:text-zinc-50 dark:hover:text-zinc-900 dark:bg-gray-700 dark:shadow-gray-700 flex flex-col items-center sm:flex-row sm:gap-2 flex-1 sm:items-center sm:justify-center"
             }
           >
-            {page.icon} 
+            {page.icon}
             <p className="text-[8px] sm:text-sm">{page.name}</p>
           </NavLink>
         ))}
+        {status && <Logout/>}
       </HStack>
     );
   } else {
@@ -69,6 +72,7 @@ const Nav = ({ small }) => {
             {page.name}
           </NavLink>
         ))}
+        {status && <Logout/>}
       </HStack>
     );
   }
