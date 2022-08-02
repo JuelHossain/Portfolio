@@ -8,7 +8,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { useRef } from "react";
-import useProjects from "../../Hooks/useProjects";
+import useProjects from "../../../Hooks/useProjects";
 
 export default function Alert({ isOpen, onClose, id }) {
   const cancelRef = useRef();

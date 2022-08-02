@@ -15,8 +15,8 @@ import { AiFillDelete, AiFillGithub } from "react-icons/ai";
 import { BiEditAlt } from "react-icons/bi";
 import { CgMediaLive } from "react-icons/cg";
 import useAdmin from "./../../Hooks/useAdmin";
-import Alert from "./Alert";
-import EditModal from "./Modal";
+import Alert from "./Update/Alert";
+import EditModal from "./Update/Modal";
 const ProjectsCard = ({
   name,
   title,

@@ -22,7 +22,7 @@
     "npm": "^8.12.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-hook-form": "^7.31.3",
+    "react-hook-form": "^7.34.0",
     "react-hot-toast": "^2.2.0",
     "react-icons": "^4.4.0",
     "react-query": "^4.0.0",

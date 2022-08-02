@@ -2,17 +2,18 @@ import { Container, Heading, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
 import useProjects from "./../../Hooks/useProjects";
+import CreateProject from "./Create/CreateProject";
 import ProjectsCard from "./ProjectsCard";
 const Projects = ({ home, size }) => {
   const { projects } = useProjects();
-  console.log(projects);
   return (
     <Container maxW={"container.lg"} className="my-6">
       <Heading size={"md"} className="text-center mt-12 mb-2">
         Projects I have done.
       </Heading>
       <hr className="mb-6 mx-40 border-yellow-400" />
-      <Stack columns={1} spacing="10">
+      <Stack spacing="10">
+        <CreateProject />
         {projects.slice(0, size).map((project, index) => {
           const {
             screenshot,
