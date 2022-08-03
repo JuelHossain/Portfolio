@@ -1,9 +1,11 @@
-import { Box, Image } from "@chakra-ui/react";
+import { Image } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import useProjects from "./../../../Hooks/useProjects";
-import UploadScreenshot from "./UploadScreenshot";
-const ImageContent = ({ id, register, watch }) => {
-  const { project: { screenshot } = {} } = useProjects(id);
+import Loading from "../../../../Components/Loading";
+import UploadScreenshot from "../../lib/UploadScreenshot";
+import useProjects from "../../../../Hooks/useProjects";
+import { ImageContainer } from "../../lib/Containers";
+const ImageContent = ({ id, register, watch, create }) => {
+  const { project: { screenshot } = {}, projectLoading } = useProjects(id);
   const [preview, setPreview] = useState("");
   const image = watch("screenshot")?.[0];
   useEffect(() => {
@@ -13,14 +15,15 @@ const ImageContent = ({ id, register, watch }) => {
     }
   }, [watch, image]);
   return (
-    <Box className=" rounded-l md:h-full overflow-hidden md:w-1/2 h-60 sm:h-80 relative">
+    <ImageContainer>
       <Image
         alt="screenshot"
         className="object-top w-full "
         src={preview || screenshot}
       />
       <UploadScreenshot register={register} />
-    </Box>
+      {projectLoading && !create && <Loading />}
+    </ImageContainer>
   );
 };
 

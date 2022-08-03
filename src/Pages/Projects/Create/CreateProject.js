@@ -1,31 +1,68 @@
-import { Box } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import ImageContent from "../Update/ImageContent";
-import TextInput from "./TextInput";
+import toast from "react-hot-toast";
+import Loading from "../../../Components/Loading";
+import imgbb from "../../../utils/imgbb";
+import ProjectModal from "../Helper/ProjectModal";
+import ImageContent from "../Update/Helper/ImageContent";
+import useProjects from "./../../../Hooks/useProjects";
+import { PContainer } from "./../lib/Containers";
+import TextInput from "./helper/TextInput";
 
-const CreateProject = () => {
+const CreateProject = ({ onClose, isOpen }) => {
+  const { createProject } = useProjects();
   const {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    reset,
+    formState: { errors, isSubmitSuccessful, isSubmitting },
   } = useForm();
+  useEffect(() => {
+    reset();
+  }, [isSubmitSuccessful, reset]);
   const submit = async (data) => {
-    console.log(data);
+    const image = data.screenshot?.[0];
+    if (image) {
+      const url = await imgbb(image);
+      console.log(url);
+      if (url) {
+        const { _id } = await createProject({
+          ...data,
+          screenshot: url,
+        });
+        if (_id) {
+          toast.success("New Project Created Successfully");
+          onClose(true);
+        }
+      }
+    } else {
+      const { _id } = await createProject({
+        ...data,
+        screenshot: "",
+      });
+      if (_id) {
+        toast.success("New Project Created Successfully");
+        onClose(true);
+      }
+    }
   };
   return (
-    <Box>
-      <Box className=" rounded relative  dark:bg-gray-800 flex md:h-[500px] shadow-md border flex-col md:flex-row dark:text-white">
-        <ImageContent register={register} watch={watch} />
-        <TextInput
-          register={register}
-          error={errors}
-          handleSubmit={handleSubmit}
-          submit={submit}
-        />
-      </Box>
-    </Box>
+    <ProjectModal
+      onClose={onClose}
+      isOpen={isOpen}
+      reset={reset}
+      header={"Create A Project"}
+      footer={"Create"}
+      execute={submit}
+      handleSubmit={handleSubmit}
+    >
+      <PContainer>
+        <ImageContent create register={register} watch={watch} />
+        <TextInput register={register} error={errors} />
+        {isSubmitting && <Loading />}
+      </PContainer>
+    </ProjectModal>
   );
 };
 

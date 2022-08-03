@@ -10,7 +10,7 @@ import {
 import { useRef } from "react";
 import useProjects from "../../../Hooks/useProjects";
 
-export default function Alert({ isOpen, onClose, id }) {
+export default function DeleteAlert({ isOpen, onClose, id }) {
   const cancelRef = useRef();
   const { deleteProject, refetch } = useProjects();
   return (
