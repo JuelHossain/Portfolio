@@ -5,7 +5,7 @@ import {
   getDesignSkills,
   getDevSkills,
 } from "./Helper/Skills";
-export default function useSkills(id) {
+export default function useSkills() {
   // development skills;
   const {
     data: devSkills,

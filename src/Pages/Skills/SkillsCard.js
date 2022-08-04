@@ -4,8 +4,8 @@ import { deleteSkill } from "../../Hooks/Helper/Skills";
 import { DeleteButton, EditButton } from "./../../Components/Admin/Buttons";
 import useAdmin from "./../../Hooks/useAdmin";
 import DeleteAlert from "./../Projects/Helper/DeleteAlert";
-import { CardContainer } from "./Helper/lib/Containers";
-import UpdateCard from "./Helper/UpdateCard";
+import { CardContainer } from "./lib/Containers";
+import UpdateCard from "./Update/UpdateCard";
 
 const SkillsCard = ({ id, title, about, icon, tag, refetch }) => {
   const { status } = useAdmin();
