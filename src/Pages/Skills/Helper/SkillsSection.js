@@ -1,6 +1,6 @@
 import { Box, SimpleGrid } from "@chakra-ui/react";
 import PageTitle from "../../../Components/PageTitle";
-import SkillsCard from "../../Home/SkillsCard";
+import SkillsCard from "../SkillsCard";
 import Loading from "./../../../Components/Loading";
 
 export function SkillsSection({ id, skills }) {

@@ -25,3 +25,10 @@ export const deleteSkill = async (id) => {
   );
   return data;
 };
+export const updateSkill = async (id, updatedSkill) => {
+  const { data } = await axios.put(
+    `http://localhost:5000/skills/solo/${id}`,
+    updatedSkill
+  );
+  return data;
+};
