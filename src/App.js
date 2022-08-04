@@ -7,7 +7,8 @@ import Skills from "./Pages/Skills/Skills";
 
 import { Center } from "@chakra-ui/react";
 import { Toaster } from "react-hot-toast";
-import { QueryClient, QueryClientProvider } from "react-query";
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Nav from "./Header/Nav";
 import useAdmin from "./Hooks/useAdmin";
 import About from "./Pages/About/About";
@@ -18,7 +19,7 @@ function App() {
   const { updateStatus } = useAdmin();
   const queryClient = new QueryClient();
   const session = sessionStorage.getItem("admin");
-  (!session) && updateStatus(false);
+  !session && updateStatus(false);
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen flex flex-col bg-zinc-50 dark:bg-zinc-900 text-gray-900 dark:text-zinc-200 relative">

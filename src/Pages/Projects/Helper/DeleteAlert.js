@@ -8,11 +8,9 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { useRef } from "react";
-import useProjects from "../../../Hooks/useProjects";
 
-export default function DeleteAlert({ isOpen, onClose, id }) {
+export default function DeleteAlert({ isOpen, onClose, id, exec, refetch }) {
   const cancelRef = useRef();
-  const { deleteProject, refetch } = useProjects();
   return (
     <>
       <AlertDialog
@@ -38,7 +36,8 @@ export default function DeleteAlert({ isOpen, onClose, id }) {
               <Button
                 colorScheme="red"
                 onClick={async () => {
-                  const data = await deleteProject(id);
+                  const data = await exec(id);
+                  console.log(id);
                   console.log(data);
                   refetch();
                   onClose(true);

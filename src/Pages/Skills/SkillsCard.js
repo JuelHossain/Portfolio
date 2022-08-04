@@ -1,7 +1,7 @@
 import { Badge } from "@chakra-ui/react";
 import React from "react";
 
-const SkillsCard = ({ title, text, icon ,cat}) => {
+const SkillsCard = ({ title, about, icon ,tag}) => {
   return (
     <div className="flex flex-col justify-between p-8 transition-shadow bg-zinc-50 dark:bg-gray-800 rounded-sm shadow group hover:bg-indigo-200 relative dark:shadow-gray-700 dark:hover:bg-gray-900">
       <div>
@@ -10,7 +10,7 @@ const SkillsCard = ({ title, text, icon ,cat}) => {
         </h5>
         <div className="pt-2 mt-4 border-t-2 border-indigo-100 dark:border-violet-100 ">
           <p className="text-xs font-medium tracking-widest text-gray-500 ">
-            {text}
+            {about}
           </p>
         </div>
       </div>
@@ -19,7 +19,7 @@ const SkillsCard = ({ title, text, icon ,cat}) => {
         colorScheme="green"
         className="absolute right-10 top-0"
       >
-        {cat}
+        {tag}
       </Badge>
       {/* <div className="inline-flex items-center mt-6 gap-2 text-indigo-600 hover:underline cursor-help ">
         <p className="text-sm font-medium">How I Learned it?</p>

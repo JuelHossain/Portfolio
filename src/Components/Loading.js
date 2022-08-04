@@ -4,7 +4,7 @@ import React from "react";
 const Loading = () => {
   return (
     <Spinner
-      className="absolute top-1/2 left-1/2"
+      className="absolute top-0 left-0 right-0 bottom-0 m-auto"
       thickness="4px"
       speed="0.65s"
       emptyColor="gray.200"

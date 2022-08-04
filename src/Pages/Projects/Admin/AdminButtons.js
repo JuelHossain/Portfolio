@@ -1,11 +1,13 @@
-import { IconButton, useDisclosure } from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react";
 import React from "react";
-import { AiFillDelete } from "react-icons/ai";
-import { BiEditAlt } from "react-icons/bi";
+import { EditButton } from "../../../Components/Admin/Buttons";
 import DeleteAlert from "../Helper/DeleteAlert";
 import UpdateProject from "../Update/Update";
+import { DeleteButton } from "./../../../Components/Admin/Buttons";
+import useProjects from "./../../../Hooks/useProjects";
 
 const AdminButtons = ({ id }) => {
+  const { deleteProject, refetch } = useProjects();
   const {
     onOpen: onAlertOpen,
     isOpen: isAlertOpen,
@@ -18,17 +20,15 @@ const AdminButtons = ({ id }) => {
   } = useDisclosure();
   return (
     <>
-      <IconButton
-        onClick={onAlertOpen}
-        icon={<AiFillDelete />}
-        className="bg-white shadow hover:bg-red-700 hover:text-white dark:bg-red-700 dark:hover:bg-black "
+      <DeleteButton onClick={onAlertOpen} />
+      <EditButton onClick={onModalOpen} />
+      <DeleteAlert
+        isOpen={isAlertOpen}
+        onClose={alertOnClose}
+        id={id}
+        exec={deleteProject}
+        refetch={refetch}
       />
-      <IconButton
-        onClick={onModalOpen}
-        icon={<BiEditAlt />}
-        className="bg-white shadow hover:bg-blue-700 hover:text-white dark:bg-blue-700 dark:hover:bg-black "
-      />
-      <DeleteAlert isOpen={isAlertOpen} onClose={alertOnClose} id={id} />
       <UpdateProject isOpen={isModalOpen} onClose={onModalClose} id={id} />
     </>
   );
