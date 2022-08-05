@@ -10,20 +10,20 @@ export const createProject = async (newProject) => {
 
 // getting projects
 export const getProjects = async () => {
-  const { data } = await axios.get("http://localhost:5000/projects");
+  const { data } = await axios.get("/projects");
   return data;
 };
 
 // getting single project by id
 export const getProject = async (id) => {
-  const { data } = await axios.get(`http://localhost:5000/projects/${id}`);
+  const { data } = await axios.get(`/projects/${id}`);
   return data;
 };
 
 // updating project
 export const updateProject = async (id, updatedData) => {
   const { data } = await axios.put(
-    `http://localhost:5000/projects/${id}`,
+    `/projects/${id}`,
     updatedData
   );
   return data;
@@ -31,6 +31,6 @@ export const updateProject = async (id, updatedData) => {
 
 // deleting project
 export const deleteProject = async (id) => {
-  const { data } = await axios.delete(`http://localhost:5000/projects/${id}`);
+  const { data } = await axios.delete(`/projects/${id}`);
   return data;
 };

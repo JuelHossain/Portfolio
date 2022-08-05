@@ -1,13 +1,9 @@
 import {
-
   Button,
-
   Divider,
-
   FormControl,
   FormErrorMessage,
   Heading,
-
   Input,
   InputGroup,
   InputLeftElement,
@@ -15,11 +11,11 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import { BsFileEarmarkPerson } from "react-icons/bs";
-import { AiTwotoneMail } from "react-icons/ai";
-import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
+import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { AiTwotoneMail } from "react-icons/ai";
+import { BsFileEarmarkPerson } from "react-icons/bs";
 
 const Form = () => {
   // react hook form
@@ -41,12 +37,14 @@ const Form = () => {
     toast.success(
       () => (
         <span>
-          <strong class="text-sm font-medium">
+          <strong className="text-sm font-medium">
             {" "}
             Your Message has been sent.
           </strong>
 
-          <p class="mt-1 text-xs">I Will Reply You Back as Soon As Possible.</p>
+          <p className="mt-1 text-xs">
+            I Will Reply You Back as Soon As Possible.
+          </p>
         </span>
       ),
       { duration: 4000 }
