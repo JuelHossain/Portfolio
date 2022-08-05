@@ -2,7 +2,7 @@ import { Divider, HStack, VStack } from "@chakra-ui/react";
 import React from "react";
 import Loading from "../../../Components/Loading";
 import useAdmin from "../../../Hooks/useAdmin";
-import useProjects from "../../../Hooks/useProjects";
+import useProject from "../../../Hooks/useProject";
 import AdminButtons from "../Admin/AdminButtons";
 import { TextContainer } from "../lib/Containers";
 import {
@@ -18,7 +18,7 @@ const ProjectDetails = ({ id }) => {
   const {
     project: { name, title, about, git, serverGit, liveSite } = {},
     projectLoading,
-  } = useProjects(id);
+  } = useProject(id);
   const { status } = useAdmin();
 
   return (

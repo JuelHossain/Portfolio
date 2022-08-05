@@ -1,8 +1,8 @@
 import { Box, Divider } from "@chakra-ui/react";
 import React from "react";
 import Loading from "../../../../Components/Loading";
+import useProject from "../../../../Hooks/useProject";
 
-import useProjects from "../../../../Hooks/useProjects";
 import { TextContainer } from "../../lib/Containers";
 import {
   UpdateAbout,
@@ -17,7 +17,7 @@ const TextContent = ({ id, register }) => {
   const {
     project: { name, title, about, git, serverGit, liveSite } = {},
     projectLoading,
-  } = useProjects(id);
+  } = useProject(id);
 
   if (projectLoading) {
     return (

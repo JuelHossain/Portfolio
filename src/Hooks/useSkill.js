@@ -7,7 +7,7 @@ const useSkill = (id) => {
     isLoading: skillLoading,
     error: skillError,
     refetch,
-  } = useQuery(["skill", id], async () => await getSkill(id));
+  } = useQuery(['skill',id], async () => await getSkill(id));
   if (id) {
     return { skill, skillLoading, skillError, refetch };
   }

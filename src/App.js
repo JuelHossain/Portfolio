@@ -10,13 +10,12 @@ import { Toaster } from "react-hot-toast";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Nav from "./Header/Nav";
-import useAdmin from "./Hooks/useAdmin";
+import { updateStatus } from "./Hooks/Helper/Admin";
 import About from "./Pages/About/About";
 import Login from "./Pages/Admin/Login";
 import Contact from "./Pages/Contact/Contact";
 import Projects from "./Pages/Projects/Projects";
 function App() {
-  const { updateStatus } = useAdmin();
   const queryClient = new QueryClient();
   const session = sessionStorage.getItem("admin");
   !session && updateStatus(false);

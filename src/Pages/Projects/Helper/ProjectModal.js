@@ -17,7 +17,6 @@ const ProjectModal = ({
   header,
   footer,
   execute,
-  handleSubmit,
   children,
 }) => {
   return (
@@ -41,7 +40,7 @@ const ProjectModal = ({
         <ModalCloseButton />
         <ModalBody>{children}</ModalBody>
         <ModalFooter>
-          <Button onClick={handleSubmit(execute)}>{footer}</Button>
+          <Button onClick={execute}>{footer}</Button>
         </ModalFooter>
       </ModalContent>
     </Modal>

@@ -16,7 +16,7 @@ export const TitleInput = ({ err, reg, value }) => {
           })}
           placeholder={"Title"}
           defaultValue={value}
-          className="text-xl font-bold text-indigo-600 dark:text-violet-500 truncate border-none"
+          className="text-xl font-bold text-indigo-600 dark:text-violet-500 truncate border"
         />
       </Tooltip>
     </FormControl>
@@ -59,7 +59,8 @@ export const Tag = ({ err, reg, value }) => {
         variant="solid"
         colorScheme="green"
         defaultValue={value}
-        className="absolute right-10 top-0 focus:outline-none focus:ring-1 w-28"
+        placeholder="Tag"
+        className="absolute right-10 top-0 focus:outline-none focus:ring-1 w-28 "
       />
     </Tooltip>
   );

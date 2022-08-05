@@ -33,8 +33,10 @@ export const updateSkill = async (id, updatedSkill) => {
   return data;
 };
 export const getSkill = async (id) => {
-  const { data } = await axios.get(
-    `http://localhost:5000/skills/solo/${id}`
-  );
+  const { data } = await axios.get(`http://localhost:5000/skills/solo/${id}`);
+  return data;
+};
+export const createSkill = async (d) => {
+  const { data } = await axios.post(`http://localhost:5000/skills`, d);
   return data;
 };

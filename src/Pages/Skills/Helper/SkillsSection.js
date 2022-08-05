@@ -1,9 +1,12 @@
 import { Box, SimpleGrid } from "@chakra-ui/react";
 import PageTitle from "../../../Components/PageTitle";
+import useAdmin from "../../../Hooks/useAdmin";
+import CreateCard from "../Create/CreateCard";
 import SkillsCard from "../SkillsCard";
 import Loading from "./../../../Components/Loading";
 
 export function SkillsSection({ id, skills }) {
+  const { status } = useAdmin();
   const [data, loading, error, refetch] = skills;
   error && console.log(error);
   if (loading) {
@@ -30,6 +33,7 @@ export function SkillsSection({ id, skills }) {
             />
           );
         })}
+        {status && <CreateCard cat={id} refresh={refetch} />}
       </SimpleGrid>
     </Box>
   );

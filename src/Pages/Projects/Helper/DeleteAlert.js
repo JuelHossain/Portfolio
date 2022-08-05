@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { useRef } from "react";
 
-export default function DeleteAlert({ isOpen, onClose, id, exec, refetch }) {
+export default function DeleteAlert({ isOpen, onClose, id, exec, refresh }) {
   const cancelRef = useRef();
   return (
     <>
@@ -36,10 +36,8 @@ export default function DeleteAlert({ isOpen, onClose, id, exec, refetch }) {
               <Button
                 colorScheme="red"
                 onClick={async () => {
-                  const data = await exec(id);
-                  console.log(id);
-                  console.log(data);
-                  refetch();
+                  await exec(id);
+                  refresh();
                   onClose(true);
                 }}
                 ml={3}

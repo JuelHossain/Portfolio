@@ -1,13 +1,14 @@
 import { useDisclosure } from "@chakra-ui/react";
 import React from "react";
 import { EditButton } from "../../../Components/Admin/Buttons";
+import { deleteProject } from "../../../Hooks/Helper/Projects";
 import DeleteAlert from "../Helper/DeleteAlert";
 import UpdateProject from "../Update/Update";
 import { DeleteButton } from "./../../../Components/Admin/Buttons";
 import useProjects from "./../../../Hooks/useProjects";
 
 const AdminButtons = ({ id }) => {
-  const { deleteProject, refetch } = useProjects();
+  const { refetch } = useProjects();
   const {
     onOpen: onAlertOpen,
     isOpen: isAlertOpen,
@@ -26,8 +27,8 @@ const AdminButtons = ({ id }) => {
         isOpen={isAlertOpen}
         onClose={alertOnClose}
         id={id}
+        refresh={refetch}
         exec={deleteProject}
-        refetch={refetch}
       />
       <UpdateProject isOpen={isModalOpen} onClose={onModalClose} id={id} />
     </>

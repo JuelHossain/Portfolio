@@ -1,14 +1,13 @@
-import { CloseIcon } from "@chakra-ui/icons";
-import { Button, Flex, IconButton } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import Loading from "../../../Components/Loading";
 import { updateSkill } from "../../../Hooks/Helper/Skills";
 import useSkill from "../../../Hooks/useSkill";
 import { CardContainer } from "../lib/Containers";
+import UpdateControl from "./lib/UpdateControl";
 import { AboutInput, Tag, TitleInput } from "./lib/UpdateInputs";
 
-const UpdateCard = ({ id, setEdit }) => {
+const UpdateCard = ({ id, setEdit, update }) => {
   // skill
   const {
     skill: { title, about, tag } = {},
@@ -24,6 +23,24 @@ const UpdateCard = ({ id, setEdit }) => {
     reset,
   } = useForm();
 
+  // submit functions
+  const submit = async () => {
+    await handleSubmit(async (d) => {
+      try {
+        const data = await updateSkill(id, d);
+        if (data._id) {
+          reset();
+          update();
+          refetch();
+          setEdit(false);
+          toast.success(`${title} updated Successfully`);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  };
+
   // loading state
   if (skillLoading) {
     return (
@@ -37,30 +54,7 @@ const UpdateCard = ({ id, setEdit }) => {
       <TitleInput err={err} reg={register} value={title} />
       <AboutInput err={err} reg={register} value={about} />
       <Tag err={err} reg={register} value={tag} />
-      <Flex gap={2}>
-        <Button
-          size={"sm"}
-          onClick={handleSubmit(async (d) => {
-            const data = await updateSkill(id, d);
-            if (data._id) {
-              reset();
-              refetch();
-              setEdit(false);
-              toast.success(`${title} updated Successfully`);
-            }
-          })}
-        >
-          Update
-        </Button>
-        <IconButton
-          size={"sm"}
-          icon={<CloseIcon w={3} />}
-          onClick={() => {
-            setEdit(false);
-            reset();
-          }}
-        />
-      </Flex>
+      <UpdateControl reset={reset} setEdit={setEdit} exec={submit} />
     </CardContainer>
   );
 };

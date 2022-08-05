@@ -10,12 +10,13 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import { updateStatus, verifyPassword } from "../../Hooks/Helper/Admin";
 // import { useNavigate } from "react-router-dom";
 import useAdmin from "../../Hooks/useAdmin";
 
 const Login = () => {
   const [password, setPassword] = useState("");
-  const { status, getStatus, updateStatus, refetch } = useAdmin();
+  const { status, refetch } = useAdmin();
   const navigate = useNavigate();
   useEffect(() => {
     if (status) {
@@ -24,7 +25,7 @@ const Login = () => {
   });
   const login = async (e) => {
     e.preventDefault();
-    const { matched } = await getStatus(password);
+    const { matched } = await verifyPassword(password);
     if (matched) {
       await updateStatus(true);
       sessionStorage.setItem("admin", true);
