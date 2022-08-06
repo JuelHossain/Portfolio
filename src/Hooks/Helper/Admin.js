@@ -19,8 +19,8 @@ export const getStatus = async () => {
 
 // updating admin status
 export const updateStatus = async (status) => {
-  const data = await axios.put(
-    "http://localhost:5000/admin",
+  await axios.put(
+    "/admin",
     {
       admin: status,
     },
@@ -28,5 +28,4 @@ export const updateStatus = async (status) => {
       headers: { secret: "true" },
     }
   );
-  return data;
 };

@@ -61,6 +61,7 @@ export default function UpdateProject({ isOpen, onClose, id }) {
       header={`Update ${name}`}
       footer={"Update"}
       execute={submit}
+      size={"4xl"}
     >
       <PContainer h={"md:h-[420px]"}>
         <ImageContent id={id} register={register} watch={watch} />

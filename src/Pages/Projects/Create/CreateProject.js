@@ -63,6 +63,7 @@ const CreateProject = ({ onClose, isOpen }) => {
       header={"Create A Project"}
       footer={"Create"}
       execute={submit}
+      size={'4xl'}
     >
       <PContainer>
         <ImageContent create register={register} watch={watch} />

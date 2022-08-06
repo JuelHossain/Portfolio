@@ -18,9 +18,11 @@ const ProjectModal = ({
   footer,
   execute,
   children,
+  ...props
 }) => {
   return (
     <Modal
+      {...props}
       isCentered
       isOpen={isOpen}
       onClose={() => {
@@ -29,7 +31,6 @@ const ProjectModal = ({
       }}
       autoFocus
       closeOnEsc
-      size={"4xl"}
     >
       <ModalOverlay
         bg="blackAlpha.300"
