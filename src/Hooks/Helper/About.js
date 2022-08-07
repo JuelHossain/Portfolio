@@ -13,7 +13,7 @@ export const getExperiences = async () => {
   return data;
 };
 export const createInfo = async (d) => {
-  const { data } = await axios.get("about", d);
+  const { data } = await axios.post("about", d);
   return data;
 };
 

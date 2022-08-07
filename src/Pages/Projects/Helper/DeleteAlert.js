@@ -22,11 +22,11 @@ export default function DeleteAlert({ isOpen, onClose, id, exec, refresh }) {
         <AlertDialogOverlay>
           <AlertDialogContent>
             <AlertDialogHeader fontSize="lg" fontWeight="bold">
-              Delete Customer
+              Are You Sure?
             </AlertDialogHeader>
 
             <AlertDialogBody>
-              Are you sure? You can't undo this action afterwards.
+              You can't undo this action afterwards.
             </AlertDialogBody>
 
             <AlertDialogFooter>

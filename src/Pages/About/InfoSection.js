@@ -4,7 +4,7 @@ import Loading from "../../Components/Loading";
 import InfoCard from "./InfoCard";
 
 export const InfoSection = ({ info, title, about }) => {
-  const [data, loading] = info;
+  const [data, loading, refetch] = info;
   if (loading) {
     return (
       <Center className="w-screen h-screen relative">
@@ -26,7 +26,7 @@ export const InfoSection = ({ info, title, about }) => {
 
         <div className="grid grid-cols-1 gap-8 mt-8 md:gap-12 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
           {data?.sort().map((ed) => (
-            <InfoCard key={ed._id} id={ed._id} />
+            <InfoCard key={ed._id} id={ed._id} refresh={refetch} />
           ))}
         </div>
       </div>

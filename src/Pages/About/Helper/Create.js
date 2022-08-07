@@ -3,8 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import Loading from "../../../Components/Loading";
-import { updateInfo } from "../../../Hooks/Helper/About";
-import useInfo from "../../../Hooks/useInfo";
+import { createInfo } from "../../../Hooks/Helper/About";
 import ProjectModal from "../../Projects/Helper/ProjectModal";
 import {
   DetailInput,
@@ -13,14 +12,8 @@ import {
   TextInput,
   TitleInput,
   WebInput,
-} from "./lib/InfoInputs";
-const Update = ({ id, isOpen, onClose }) => {
-  const {
-    info: { title, grade, duration, insName, text, web } = {},
-    loading,
-    refetch,
-  } = useInfo(id);
-
+} from "../Update/lib/InfoInputs";
+const Create = ({ isOpen, onClose, cat, refetch }) => {
   // react hook form
   const {
     register,
@@ -30,14 +23,15 @@ const Update = ({ id, isOpen, onClose }) => {
   } = useForm();
 
   // update function
-  const update = () => {
+  const create = () => {
     handleSubmit(async (d) => {
-      const { _id } = await updateInfo(id, d);
+      const { _id } = await createInfo({ ...d, cat });
+      console.log(_id);
       if (_id) {
         reset();
         refetch();
         onClose(true);
-        toast.success("Updated Successfully");
+        toast.success("Created Successfully");
       }
     })();
   };
@@ -47,26 +41,26 @@ const Update = ({ id, isOpen, onClose }) => {
       isOpen={isOpen}
       onClose={onClose}
       reset={reset}
-      header={`Update ${title}`}
-      footer={"Update Info"}
-      execute={update}
+      header={`Create a ${cat}`}
+      footer={"Create Info"}
+      execute={create}
       size={"2xl"}
     >
-      {(loading || isSubmitting) && <Loading />}
+      {isSubmitting && <Loading />}
       <Box className="flex gap-3 flex-col md:flex-row">
         <Box className="flex-1 gap-3 flex flex-col">
-          <TitleInput err={errors} reg={register} value={title} />
-          <DetailInput err={errors} reg={register} value={grade} />
-          <DurationInput err={errors} reg={register} value={duration} />
+          <TitleInput err={errors} reg={register} />
+          <DetailInput err={errors} reg={register} />
+          <DurationInput err={errors} reg={register} />
         </Box>
         <Box className="flex-1 gap-3 flex flex-col">
-          <InsNameInput err={errors} reg={register} value={insName} />
-          <TextInput err={errors} reg={register} value={text} />
-          <WebInput err={errors} reg={register} value={web} />
+          <InsNameInput err={errors} reg={register} />
+          <TextInput err={errors} reg={register} />
+          <WebInput err={errors} reg={register} />
         </Box>
       </Box>
     </ProjectModal>
   );
 };
 
-export default Update;
+export default Create;
