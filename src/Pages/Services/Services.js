@@ -1,9 +1,13 @@
-import React from "react";
-import ServicesCard from "./ServicesCard";
 import { Container, Heading, SimpleGrid } from "@chakra-ui/react";
+import React from "react";
 import { CgWebsite } from "react-icons/cg";
-import { MdOutlineDesignServices, MdBrandingWatermark } from "react-icons/md";
+import { MdBrandingWatermark, MdOutlineDesignServices } from "react-icons/md";
 import { TbSettingsAutomation } from "react-icons/tb";
+import branding from "../../assets/services/automation1.jpg";
+import design from "../../assets/services/Branding.jpg";
+import fullstack from "../../assets/services/coding.jpg";
+import website from "../../assets/services/websiteDesign.jpg";
+import ServicesCard from "./ServicesCard";
 const Services = () => {
   return (
     <Container maxW={"container.lg"} my="6">
@@ -11,8 +15,9 @@ const Services = () => {
         What I can Offer?
       </Heading>
       <hr className="mb-6 mx-60 border-yellow-400" />
-      <SimpleGrid columns={[1, 2, 3, 4]} spacing="2">
+      <SimpleGrid columns={[1, 1, 2, 2]} spacing="2">
         <ServicesCard
+          photo={website}
           icon={<MdOutlineDesignServices />}
           title="Website Design"
           text={
@@ -21,7 +26,8 @@ const Services = () => {
           rating="4.9"
         />
         <ServicesCard
-          sp={"bg-yellow-400 dark:bg-red-500"}
+          // sp={"bg-yellow-400 dark:bg-red-500"}
+          photo={fullstack}
           icon={<CgWebsite />}
           title="FullStack Website "
           text={
@@ -31,6 +37,7 @@ const Services = () => {
         />
 
         <ServicesCard
+          photo={branding}
           icon={<TbSettingsAutomation />}
           title="Automation"
           text={
@@ -39,6 +46,7 @@ const Services = () => {
           rating="4.9"
         />
         <ServicesCard
+          photo={design}
           icon={<MdBrandingWatermark />}
           title="Branding"
           text={
