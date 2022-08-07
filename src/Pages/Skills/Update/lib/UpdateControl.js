@@ -1,17 +1,18 @@
 import { CloseIcon } from "@chakra-ui/icons";
 import { Button, Flex, IconButton } from "@chakra-ui/react";
 
-const UpdateControl = ({setEdit, reset, exec}) => {
+const UpdateControl = ({ close, reset, exec, name }) => {
   return (
     <Flex gap={2}>
-      <Button size={"sm"} onClick={exec}>
-        Update
+      <Button size={"sm"} onClick={exec} className="dark:bg-gray-500">
+        {name}
       </Button>
       <IconButton
+        className="dark:bg-gray-500"
         size={"sm"}
         icon={<CloseIcon w={3} />}
         onClick={() => {
-          setEdit(false);
+          close(false);
           reset();
         }}
       />

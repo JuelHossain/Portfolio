@@ -54,7 +54,7 @@ const UpdateCard = ({ id, setEdit, update }) => {
       <TitleInput err={err} reg={register} value={title} />
       <AboutInput err={err} reg={register} value={about} />
       <Tag err={err} reg={register} value={tag} />
-      <UpdateControl reset={reset} setEdit={setEdit} exec={submit} />
+      <UpdateControl reset={reset} close={setEdit} exec={submit} name={"Update"} />
     </CardContainer>
   );
 };

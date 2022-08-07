@@ -3,37 +3,20 @@ import PageTitle from "../../../Components/PageTitle";
 import useAdmin from "../../../Hooks/useAdmin";
 import CreateCard from "../Create/CreateCard";
 import SkillsCard from "../SkillsCard";
-import Loading from "./../../../Components/Loading";
 
 export function SkillsSection({ id, skills }) {
   const { status } = useAdmin();
   const [data, loading, error, refetch] = skills;
+
   error && console.log(error);
-  if (loading) {
-    return (
-      <Box className="w-screen h-screen relative">
-        <Loading />
-      </Box>
-    );
-  }
   return (
     <Box id={id}>
       <PageTitle>{`${id} Skills`}</PageTitle>
       <SimpleGrid columns={[1, 2, 3, 4]} spacing="2">
-        {data?.map((skill) => {
-          const { title, about, tag, _id } = skill;
-          return (
-            <SkillsCard
-              key={_id}
-              title={title}
-              about={about}
-              tag={tag}
-              id={_id}
-              refetch={refetch}
-            />
-          );
-        })}
-        {status && <CreateCard cat={id} refresh={refetch} />}
+        {data?.map((sk) => (
+          <SkillsCard key={sk._id} id={sk._id} refetch={refetch} />
+        ))}
+        {status && !loading && <CreateCard cat={id} refresh={refetch} />}
       </SimpleGrid>
     </Box>
   );

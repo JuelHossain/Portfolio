@@ -3,7 +3,7 @@ import { BiPlusCircle } from "react-icons/bi";
 function CreateButton({ setCreate, cat }) {
   return (
     <Center
-      className="hover:bg-indigo-200 flex-col gap-3"
+      className="hover:bg-indigo-200 flex-col gap-3  bg-zinc-50 dark:bg-gray-800 rounded-sm  group relative dark:shadow-gray-700 dark:hover:bg-gray-900"
       shadow={"md"}
       p={10}
       onClick={() => setCreate(true)}

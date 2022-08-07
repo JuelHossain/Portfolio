@@ -36,12 +36,12 @@ const ProjectModal = ({
         bg="blackAlpha.300"
         backdropFilter="blur(10px) hue-rotate(90deg)"
       />
-      <ModalContent>
+      <ModalContent className="dark:bg-gray-900 dark:text-gray-200">
         <ModalHeader>{header}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>{children}</ModalBody>
         <ModalFooter>
-          <Button onClick={execute}>{footer}</Button>
+          <Button className="dark:bg-gray-700" onClick={execute}>{footer}</Button>
         </ModalFooter>
       </ModalContent>
     </Modal>

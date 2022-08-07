@@ -1,21 +1,13 @@
-import { Center, Container } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import React from "react";
-import Loading from "../../Components/Loading";
 import InfoCard from "./InfoCard";
 
 export const InfoSection = ({ info, title, about }) => {
-  const [data, loading, refetch] = info;
-  if (loading) {
-    return (
-      <Center className="w-screen h-screen relative">
-        <Loading />
-      </Center>
-    );
-  }
+  const [data, , refetch] = info;
   return (
     <Container
       maxW="container.lg"
-      className=" bg-gray-100 dark:bg-gray-800 rounded-lg mb-8"
+      className=" bg-gray-100 dark:bg-gray-800 rounded-lg mb-8 relative"
     >
       <div className="max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="max-w-xl">

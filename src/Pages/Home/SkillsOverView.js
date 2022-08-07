@@ -1,17 +1,16 @@
-import { Container, Heading, SimpleGrid, Text } from "@chakra-ui/react";
-import React from "react";
-
-import SkillsCard from "./SkillsCard";
-
+import { Container, Heading, SimpleGrid } from "@chakra-ui/react";
+import { FaKeyboard } from "react-icons/fa";
 import {
-  SiExpress,
-  SiReact,
-  SiWebdriverio,
   SiAdobeillustrator,
+  SiExpress,
+  SiMongodb,
+  SiNodedotjs,
+  SiReact,
   SiTailwindcss,
+  SiWebdriverio,
 } from "react-icons/si";
-
-import { Link } from "react-router-dom";
+import VisitMore from "../../Components/VisitMore";
+import SkillsCard from "./SkillsCard";
 
 const SkillsOverView = () => {
   return (
@@ -22,12 +21,12 @@ const SkillsOverView = () => {
 
       <hr className="mb-6 mx-60 border-yellow-400" />
 
-      <SimpleGrid columns={[1, 2, 3, 4, 5]} spacing="2">
+      <SimpleGrid columns={[1, 2, 3, 4]} spacing="2">
         <SkillsCard
-          bg={"bg-sky-400 hover:bg-sky-500"}
-          title="React"
-          text={"The Most Popular Javascript Library"}
-          icon={<SiReact />}
+          bg={"bg-[#589636] hover:bg-lime-700"}
+          title="MongoDb"
+          text={"The Most Popular NoSQL Database"}
+          icon={<SiMongodb />}
         />
         <SkillsCard
           bg={"bg-green-700 hover:bg-green-600"}
@@ -35,6 +34,24 @@ const SkillsOverView = () => {
           text={"Most Popular Node js Framework"}
           icon={<SiExpress />}
         />
+        <SkillsCard
+          bg={"bg-[#61DBFB] hover:bg-cyan-400"}
+          title="React Js"
+          text={"The Most Popular Javascript Library"}
+          icon={<SiReact />}
+        />
+        <SkillsCard
+          bg={"bg-[#339933] hover:bg-[#336633]"}
+          title="Node Js"
+          text={"The Most Popular Javascript Library"}
+          icon={<SiNodedotjs />}
+        />
+          <SkillsCard
+            bg={"bg-sky-500 hover:bg-sky-400"}
+            title="Tailwind Css"
+            text={"The Most Popular Css Framework."}
+            icon={<SiTailwindcss />}
+          />
         <SkillsCard
           bg={"bg-orange-600 hover:bg-orange-500"}
           title="Web Driver IO"
@@ -48,27 +65,13 @@ const SkillsOverView = () => {
           icon={<SiAdobeillustrator />}
         />
         <SkillsCard
-          bg={"bg-sky-500 hover:bg-sky-400"}
-          title="Tailwind Css"
-          text={"The Most Popular Css Framework."}
-          icon={<SiTailwindcss />}
+          bg={"bg-violet-600 hover:bg-violet-800"}
+          title="80+ WPM"
+          text={"Professional Typing Speed."}
+          icon={<FaKeyboard />}
         />
-        {/* <SkillsCard
-            bg={"bg-violet-600 hover:bg-rose-500"}
-            title="Nitro Typing."
-            text={"80+wpm Typing Speed."}
-            icon={<TiMessageTyping />}
-          /> */}
       </SimpleGrid>
-      <Text
-        fontSize={"sm"}
-        className="rounded py-3 text-center my-3 bg-yellow-400 dark:bg-red-500"
-      >
-        Please Visit the skills sections to know .
-        <Link className="underline" to="/skills#root">
-          all the skills i have got &rarr;{" "}
-        </Link>
-      </Text>
+      <VisitMore link={"/skills#root"} section="Skills" />
     </Container>
   );
 };

@@ -1,5 +1,6 @@
 import { Container } from "@chakra-ui/react";
 import React from "react";
+import Loading from "../../Components/Loading";
 import useSkills from "../../Hooks/useSkills";
 
 import SkillsNav from "./Helper/SkillsNav";
@@ -11,7 +12,14 @@ import {
 } from "./Helper/SkillsSection";
 const Skills = () => {
   const { development, automation, computer, design } = useSkills();
-
+  const loading = development[1] || automation[1] || computer[1] || design[1];
+  if (loading) {
+    return (
+      <Container maxW={"container.lg"} className={"w-screen h-screen relative"}>
+        <Loading size={"xl"} />
+      </Container>
+    );
+  }
   return (
     <Container maxW={"container.lg"} className="my-2 scroll-smooth relative ">
       <SkillsNav />

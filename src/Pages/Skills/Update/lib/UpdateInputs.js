@@ -24,7 +24,7 @@ export const TitleInput = ({ err, reg, value }) => {
 };
 export const AboutInput = ({ err, reg, value }) => {
   return (
-    <FormControl className="pt-2 border-t-2 border-indigo-100 dark:border-violet-100 ">
+    <FormControl>
       <Tooltip
         isOpen={err?.about}
         label={err?.about?.message}

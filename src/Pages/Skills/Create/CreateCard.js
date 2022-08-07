@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 
 import { createSkill } from "../../../Hooks/Helper/Skills";
 import { CardContainer } from "../lib/Containers";
+import UpdateControl from "../Update/lib/UpdateControl";
 import { AboutInput, Tag, TitleInput } from "../Update/lib/UpdateInputs";
 import CreateButton from "./lib/CreateButton";
 
@@ -45,9 +46,7 @@ const CreateCard = ({ cat, refresh }) => {
       <TitleInput err={err} reg={register} />
       <AboutInput err={err} reg={register} />
       <Tag err={err} reg={register} />
-      <Button size={"sm"} type="submit">
-        Create
-      </Button>
+      <UpdateControl reset={reset} close={setCreate} exec={submit} name={"Create"} />
     </CardContainer>
   );
 };

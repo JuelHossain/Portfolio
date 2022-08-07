@@ -6,7 +6,7 @@ export const DeleteButton = ({ ...props }) => {
     <IconButton
       {...props}
       icon={<AiFillDelete />}
-      className="bg-white shadow hover:bg-red-700 hover:text-white dark:bg-red-700 dark:hover:bg-black "
+      className="bg-white shadow hover:bg-red-700 hover:text-white dark:bg-red-700 dark:hover:bg-black dark:text-white"
     />
   );
 };
@@ -15,7 +15,7 @@ export const EditButton = ({ ...props }) => {
     <IconButton
       {...props}
       icon={<BiEditAlt />}
-      className="bg-white shadow hover:bg-blue-700 hover:text-white dark:bg-blue-700 dark:hover:bg-black "
+      className="bg-white shadow hover:bg-blue-700 hover:text-white dark:bg-blue-700 dark:hover:bg-black dark:text-white "
     />
   );
 };

@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/react";
 export function PContainer({ children, h = "md:h-[450px]" }) {
   return (
     <Box
-      className={`rounded relative  dark:bg-gray-800 flex  shadow-md border flex-col md:flex-row dark:text-white ${h}`}
+      className={`rounded relative  dark:bg-gray-800 flex  shadow-md border flex-col md:flex-row dark:text-white dark:shadow-gray-800 dark:border-gray-700 ${h}`}
     >
       {children}
     </Box>

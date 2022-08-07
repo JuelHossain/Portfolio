@@ -1,5 +1,3 @@
-import React from "react";
-
 const UploadScreenshot = ({ register }) => {
   return (
     <div
@@ -7,7 +5,7 @@ const UploadScreenshot = ({ register }) => {
     >
       <label
         htmlFor="dropzone-file"
-        className="flex flex-col justify-center items-center w-full h-full bg-gray-50/50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100/50 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+        className="flex flex-col justify-center items-center w-full h-full bg-gray-50/50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer  dark:bg-gray-700/50  dark:border-gray-600 dark:hover:border-gray-500 "
       >
         <div className="flex flex-col justify-center items-center pt-5 pb-6">
           <svg
