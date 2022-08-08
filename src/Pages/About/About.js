@@ -15,7 +15,7 @@ const About = () => {
     );
   }
   return (
-    <Container maxW={"container.lg"}>
+    <Container maxW={"container.lg"} className="my-5 sm:my-10 space-y-10">
       <Head />
       <Courses info={courses} />
       <Experiences info={experiences} />

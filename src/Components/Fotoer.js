@@ -1,13 +1,12 @@
-
 import React from "react";
-import { SiFreelancer } from "react-icons/si";
 import {
   RiArrowUpSLine,
-  RiTwitterFill,
-  RiLinkedinBoxFill,
-  RiGithubFill,
   RiFacebookCircleFill,
+  RiGithubFill,
+  RiLinkedinBoxFill,
+  RiTwitterFill,
 } from "react-icons/ri";
+import { SiFreelancer } from "react-icons/si";
 const Footer = () => {
   const socs = [
     {
@@ -33,7 +32,7 @@ const Footer = () => {
     {
       name: "Freelancer",
       icon: <SiFreelancer />,
-      link: "https://www.freelancer.com/u/juelhossainn/",
+      link: "https://www.freelancer.com/u/JuellHossainn",
     },
   ];
   return (

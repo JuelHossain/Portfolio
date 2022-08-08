@@ -3,7 +3,7 @@ import React from "react";
 import me from "../../../assets/me.png";
 const Head = () => {
   return (
-    <div className="max-w-5xl  py-8 mx-auto">
+    <div className="max-w-5xl mx-auto">
       <section className="p-8 bg-gray-100 dark:bg-gray-800 rounded-lg">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-3 sm:items-center">
           <div className="relative">

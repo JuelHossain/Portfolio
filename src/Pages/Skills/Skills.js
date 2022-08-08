@@ -3,7 +3,6 @@ import React from "react";
 import Loading from "../../Components/Loading";
 import useSkills from "../../Hooks/useSkills";
 
-import SkillsNav from "./Helper/SkillsNav";
 import {
   Automation,
   Computer,
@@ -21,7 +20,10 @@ const Skills = () => {
     );
   }
   return (
-    <Container maxW={"container.lg"} className=" mb-10 md:my-10 scroll-smooth relative flex flex-col gap-10 ">
+    <Container
+      maxW={"container.lg"}
+      className="my-5 sm:my-10 scroll-smooth relative flex flex-col gap-10 "
+    >
       {/* <SkillsNav /> */}
       <Development skills={development} />
       <Automation skills={automation} />

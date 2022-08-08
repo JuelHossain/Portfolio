@@ -15,7 +15,7 @@ const Projects = ({ home, size }) => {
     return <Loading size={"xl"} />;
   }
   return (
-    <Container maxW={"container.lg"} className=" mb-10 md:my-10 relative">
+    <Container maxW={"container.lg"} className="my-5 sm:my-10 relative">
       <PageTitle>Projects I have done.</PageTitle>
       {status && !home && <CreateButton />}
       <Stack spacing="10">

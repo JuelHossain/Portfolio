@@ -22,15 +22,15 @@ const Banner = () => {
   ];
 
   return (
-    <Container maxW="container.lg">
+    <Container maxW="container.lg" className="my-5 sm:my-10 rounded">
       <Flex direction={["column-reverse", "column-reverse", "row-reverse"]}>
-        <Center className="flex-1 shadow hover:shadow-md dark:shadow-gray-700 dark:bg-gray-800">
+        <Center className="flex-1 w-full shadow hover:shadow-md dark:shadow-gray-700 dark:bg-gray-800 pb-4 sm:p-4">
           <VStack p="4" alignItems={["center", "center", "start"]}>
             <Heading className="text-4xl sm:text-5xl font-extrabold sm:font-black ">
               Juel Hossain
             </Heading>
             <Heading
-              className="text-4xl sm:text-5xl font-extrabold sm:font-black text-red-500 py-1 "
+              className="text-4xl md:text-5xl font-extrabold sm:font-black text-red-500 py-1 "
               noOfLines={1}
             >
               <ReactTyped strings={titles} typeSpeed={80} backSpeed={50} loop />

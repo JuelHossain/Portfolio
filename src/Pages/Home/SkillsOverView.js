@@ -1,4 +1,4 @@
-import { Container, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Container, SimpleGrid } from "@chakra-ui/react";
 import { FaKeyboard } from "react-icons/fa";
 import {
   SiAdobeillustrator,
@@ -15,10 +15,8 @@ import SkillsCard from "./SkillsCard";
 
 const SkillsOverView = () => {
   return (
-    <Container maxW={"container.lg"}>
-      <PageTitle>
-        Skills Overview
-      </PageTitle>
+    <Container maxW={"container.lg"} className="my-5 sm:my-10">
+      <PageTitle>Skills Overview</PageTitle>
 
       <SimpleGrid columns={[1, 2, 3, 4]} spacing="4">
         <SkillsCard
@@ -45,12 +43,12 @@ const SkillsOverView = () => {
           text={"The Most Popular Javascript Library"}
           icon={<SiNodedotjs />}
         />
-          <SkillsCard
-            bg={"bg-sky-500 hover:bg-sky-400"}
-            title="Tailwind Css"
-            text={"The Most Popular Css Framework."}
-            icon={<SiTailwindcss />}
-          />
+        <SkillsCard
+          bg={"bg-sky-500 hover:bg-sky-400"}
+          title="Tailwind Css"
+          text={"The Most Popular Css Framework."}
+          icon={<SiTailwindcss />}
+        />
         <SkillsCard
           bg={"bg-orange-600 hover:bg-orange-500"}
           title="Web Driver IO"

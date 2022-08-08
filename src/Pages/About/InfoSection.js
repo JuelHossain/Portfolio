@@ -7,7 +7,7 @@ export const InfoSection = ({ info, title, about }) => {
   return (
     <Container
       maxW="container.lg"
-      className=" bg-gray-100 dark:bg-gray-800 rounded-lg mb-8 relative"
+      className=" bg-gray-100 dark:bg-gray-800 rounded-lg  relative"
     >
       <div className="max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="max-w-xl">
