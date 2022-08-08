@@ -21,8 +21,8 @@ const Skills = () => {
     );
   }
   return (
-    <Container maxW={"container.lg"} className="my-2 scroll-smooth relative ">
-      <SkillsNav />
+    <Container maxW={"container.lg"} className=" mb-10 md:my-10 scroll-smooth relative flex flex-col gap-10 ">
+      {/* <SkillsNav /> */}
       <Development skills={development} />
       <Automation skills={automation} />
       <Design skills={design} />

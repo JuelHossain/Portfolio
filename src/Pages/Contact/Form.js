@@ -51,8 +51,8 @@ const Form = () => {
     );
   }
   return (
-    <div className=" sm:w-1/2 dark:shadow-gray-700 flex flex-col md:ml-auto w-full  mt-8 md:mt-0 shadow-md p-2 rounded-lg bg-zinc-50 dark:bg-gray-800">
-      <Heading size={"md"}>Contact Me</Heading>
+    <div className=" sm:w-1/2 dark:shadow-gray-700 flex flex-col md:ml-auto w-full shadow-md p-2 rounded-lg bg-zinc-50 dark:bg-gray-800">
+      <Heading size={"md"}>Wow Thanks!</Heading>
       <Divider className="border-yellow-400 dark:border-red-500 my-1" />
       <Text className="leading-relaxed mb-5 ">
         Please Send Me a Written Message here,

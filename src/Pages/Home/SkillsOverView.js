@@ -9,19 +9,18 @@ import {
   SiTailwindcss,
   SiWebdriverio,
 } from "react-icons/si";
+import PageTitle from "../../Components/PageTitle";
 import VisitMore from "../../Components/VisitMore";
 import SkillsCard from "./SkillsCard";
 
 const SkillsOverView = () => {
   return (
     <Container maxW={"container.lg"}>
-      <Heading size={"md"} className="text-center mt-12 mb-2">
-        What I Know ?
-      </Heading>
+      <PageTitle>
+        Skills Overview
+      </PageTitle>
 
-      <hr className="mb-6 mx-60 border-yellow-400" />
-
-      <SimpleGrid columns={[1, 2, 3, 4]} spacing="2">
+      <SimpleGrid columns={[1, 2, 3, 4]} spacing="4">
         <SkillsCard
           bg={"bg-[#589636] hover:bg-lime-700"}
           title="MongoDb"

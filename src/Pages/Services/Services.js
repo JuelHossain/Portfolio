@@ -1,4 +1,4 @@
-import { Container, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Container, SimpleGrid } from "@chakra-ui/react";
 import React from "react";
 import { CgWebsite } from "react-icons/cg";
 import { MdBrandingWatermark, MdOutlineDesignServices } from "react-icons/md";
@@ -7,15 +7,13 @@ import branding from "../../assets/services/automation1.jpg";
 import design from "../../assets/services/Branding.jpg";
 import fullstack from "../../assets/services/coding.jpg";
 import website from "../../assets/services/websiteDesign.jpg";
+import PageTitle from "../../Components/PageTitle";
 import ServicesCard from "./ServicesCard";
 const Services = () => {
   return (
-    <Container maxW={"container.lg"} my="6">
-      <Heading size={"md"} className="text-center mt-12 mb-2">
-        What I can Offer?
-      </Heading>
-      <hr className="mb-6 mx-60 border-yellow-400" />
-      <SimpleGrid columns={[1, 1, 2, 2]} spacing="2">
+    <Container maxW={"container.lg"}>
+      <PageTitle>What I can Offer ?</PageTitle>
+      <SimpleGrid columns={[1, 1, 2, 2]} spacing="4">
         <ServicesCard
           photo={website}
           icon={<MdOutlineDesignServices />}
@@ -50,7 +48,7 @@ const Services = () => {
           icon={<MdBrandingWatermark />}
           title="Branding"
           text={
-            "I Can Make Brand Identity like Logo . banner etc. Your brand will sine in your website for sure."
+            "I Can Make Brand Identity like Logo . banner etc. Your brand will shine in your website for sure."
           }
           rating="4.9"
         />

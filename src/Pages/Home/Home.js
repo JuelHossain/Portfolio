@@ -7,10 +7,10 @@ import SkillsOverView from './SkillsOverView';
 
 const Home = () => {
     return (
-        <div>
+        <div className="flex flex-col gap-10 md:gap-20 sm:my-10 md:my-20">
             <Banner />
-            <Services />
             <SkillsOverView />
+            <Services />
             <Projects home={true} size={2} />
             <Contact />
         </div>

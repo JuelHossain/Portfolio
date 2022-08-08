@@ -1,14 +1,12 @@
-import { Heading } from "@chakra-ui/react";
 import React from "react";
 
 const PageTitle = ({ children }) => {
   return (
-    <>
-      <Heading size={"md"} className="text-center mt-12 mb-2 capitalize">
+    <div className="py-5 md:py-10 sm:px-10 md:px-20 space-y-3">
+      <p className="text-2xl font-bold text-center mb-2 capitalize p-2 bg-gradient-to-r rounded from-yellow-500 dark:from-red-500">
         {children}
-      </Heading>
-      <hr className="mb-6 mx-40 border-yellow-400" />
-    </>
+      </p>
+    </div>
   );
 };
 

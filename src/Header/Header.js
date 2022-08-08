@@ -1,4 +1,4 @@
-import {MoonIcon } from "@chakra-ui/icons";
+import { MoonIcon } from "@chakra-ui/icons";
 import {
   Box,
   Center,
@@ -7,12 +7,11 @@ import {
   Heading,
   HStack,
   IconButton,
+  Link,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import Nav from "./Nav";
-import { AiFillGithub } from "react-icons/ai";
-import { AiFillLinkedin } from "react-icons/ai";
-
 
 const Header = () => {
   const [dark, setDark] = useState(false);
@@ -22,22 +21,13 @@ const Header = () => {
     } else {
       document.documentElement.classList.remove("dark");
     }
-  },[dark])
+  }, [dark]);
   return (
     <Box
       as="header"
-      my={2}
-      p={1}
-      className="sticky top-0 z-40 bg-zinc-50 dark:bg-zinc-900"
+      className="sticky top-0 z-40 bg-zinc-50 dark:bg-zinc-900 py-3"
     >
-      <Container maxW={"container.lg"} className="relative">
-        {/* <Circle
-          className="absolute  -bottom-2 right-40"
-       onClick={() => {
-            setSmall(!small);
-          }}>
-          <IoIosArrowDropdown className="text-xl"/>
-        </Circle> */}
+      <Container maxW={"container.lg"}>
         <Flex gap={4} justify="space-between">
           <Center>
             <Heading
@@ -53,17 +43,16 @@ const Header = () => {
           <Nav />
           <HStack>
             <IconButton
-              as={"a"}
-              target={"_blank"}
-              rel="noreferrer"
+              as={Link}
+              isExternal
               href="https://github.com/juelhossain"
               size={"sm"}
               icon={<AiFillGithub />}
               className="hover:bg-yellow-400 shadow hover:shadow-md font-bold rounded-full dark:bg-gray-700 dark:text-white"
             ></IconButton>
             <IconButton
-              as={"a"}
-              rel="noreferrer"
+              as={Link}
+              isExternal
               href="https://linkedin.com/in/juelhossainnn"
               size={"sm"}
               icon={<AiFillLinkedin />}

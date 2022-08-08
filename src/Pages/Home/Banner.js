@@ -1,25 +1,30 @@
-import { DownloadIcon,  } from "@chakra-ui/icons";
+import { DownloadIcon } from "@chakra-ui/icons";
 import {
-  Image,
   Center,
   Container,
   Flex,
+  Heading,
+  Image,
   Text,
   VStack,
-  Heading,
-
 } from "@chakra-ui/react";
-import MyButton from "../../Components/MyButton";
-import me from "../../assets/me.png";
-import cv from '../../assets/Cv Of Juel-Hossain.pdf'
 import ReactTyped from "react-typed";
+import cv from "../../assets/Cv Of Juel-Hossain.pdf";
+import me from "../../assets/me.png";
+import MyButton from "../../Components/MyButton";
 const Banner = () => {
-  var titles = ["Web Developer", "Web Designer", "Graphic Designer","Programmer","Automation boy"];
+  var titles = [
+    "Web Developer",
+    "Web Designer",
+    "Graphic Designer",
+    "Programmer",
+    "Automation boy",
+  ];
 
   return (
-    <Container maxW="container.lg" my={6}>
+    <Container maxW="container.lg">
       <Flex direction={["column-reverse", "column-reverse", "row-reverse"]}>
-        <Center className="flex-1 shadow hover:shadow-md dark:shadow-gray-700">
+        <Center className="flex-1 shadow hover:shadow-md dark:shadow-gray-700 dark:bg-gray-800">
           <VStack p="4" alignItems={["center", "center", "start"]}>
             <Heading className="text-4xl sm:text-5xl font-extrabold sm:font-black ">
               Juel Hossain
@@ -43,7 +48,7 @@ const Banner = () => {
         </Center>
         <Center
           w={["auto", "auto", 350, 400]}
-          className="shadow hover:shadow-md dark:shadow-gray-700"
+          className="shadow hover:shadow-md dark:shadow-gray-700 dark:bg-gray-800"
         >
           <Image className="w-auto" fit={"cover"} src={me} align="top"></Image>
         </Center>
