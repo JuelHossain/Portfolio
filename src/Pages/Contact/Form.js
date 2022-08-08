@@ -79,10 +79,10 @@ const Form = () => {
             />
           </InputGroup>
           <FormErrorMessage>
-            {errors.name && errors.name.message}
+            {errors?.name && errors?.name?.message}
           </FormErrorMessage>
         </FormControl>
-        <FormControl isInvalid={errors.email}>
+        <FormControl isInvalid={errors?.email}>
           <InputGroup>
             <InputLeftElement
               pointerEvents="none"
@@ -101,7 +101,7 @@ const Form = () => {
             />
           </InputGroup>
           <FormErrorMessage>
-            {errors.email && errors.email.message}
+            {errors?.email && errors?.email?.message}
           </FormErrorMessage>
         </FormControl>
         <FormControl isInvalid={errors.text}>
@@ -114,7 +114,7 @@ const Form = () => {
             resize={"vertical"}
           />
           <FormErrorMessage>
-            {errors.email && errors.text.message}
+            {errors?.text && errors?.text.message}
           </FormErrorMessage>
         </FormControl>
         <Button
