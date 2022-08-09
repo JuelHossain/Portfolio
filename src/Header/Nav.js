@@ -1,9 +1,11 @@
 import { HStack } from "@chakra-ui/react";
 import React from "react";
 import { AiFillHome, AiFillProject } from "react-icons/ai";
-import { BsFillExclamationSquareFill } from "react-icons/bs";
+import { BiChat } from "react-icons/bi";
+import { BsChatLeftTextFill, BsChatSquareDots, BsChatSquareDotsFill, BsFillExclamationSquareFill } from "react-icons/bs";
 import { CgEditUnmask } from "react-icons/cg";
 import { GrContact } from "react-icons/gr";
+import { MdContactPage } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import useAdmin from "./../Hooks/useAdmin";
 import Logout from "./Logout";
@@ -33,7 +35,7 @@ const Nav = ({ small }) => {
     {
       name: "Contact",
       link: "/contact",
-      icon: <GrContact className="text-sm" />,
+      icon: <BsChatSquareDotsFill className="text-sm " />,
     },
   ];
   if (small) {

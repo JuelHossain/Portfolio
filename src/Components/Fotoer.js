@@ -1,3 +1,4 @@
+import { ArrowUpIcon } from "@chakra-ui/icons";
 import React from "react";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import {
@@ -62,10 +63,10 @@ const Footer = () => {
         </p>
       </div>
       <ScrollToTop
-        className="items-center flex justify-center text-2xl bg-yellow-500 z-[999]"
+        className="items-center flex justify-center text-xl bg-yellow-500 dark:bg-red-500 z-[999] rounded-full p-0"
         smooth
         top={500}
-        component={<AiOutlineArrowUp />}
+        component={<ArrowUpIcon />}
       />
     </footer>
   );

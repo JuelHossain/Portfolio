@@ -12,7 +12,11 @@ const Projects = ({ home, size }) => {
   const { status } = useAdmin();
 
   if (projectsLoading) {
-    return <Loading size={"xl"} />;
+    return (
+      <Container maxW={"container.lg"} className="w-screen h-screen relative">
+        <Loading size={"xl"} />
+      </Container>
+    );
   }
   return (
     <Container maxW={"container.lg"} className="my-5 sm:my-10 relative">

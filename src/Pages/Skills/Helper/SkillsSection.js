@@ -23,7 +23,7 @@ export function SkillsSection({ id, skills,cls }) {
 }
 
 export function Development({ skills }) {
-  return <SkillsSection id={"development"} skills={skills} cls={"my-5 sm:my-0"} />;
+  return <SkillsSection id={"development"} skills={skills} />;
 }
 export function Automation({ skills }) {
   return <SkillsSection id={"automation"} skills={skills} />;
