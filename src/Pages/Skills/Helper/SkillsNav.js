@@ -44,14 +44,15 @@ const SkillsNav = () => {
           offset={page.default ? -200 : -180}
           key={Math.random()}
           to={page.link}
-          onSetActive={(a) => {
+          onSetActive={(a, e) => {
             setActive(a);
           }}
           className={
             page.link === active
-              ? "bg-violet-600 text-gray-200 dark:shadow-gray-700 hover:bg-yellow-500 hover:text-gray-700 dark:hover:bg-red-500 shadow hover:shadow-md font-bold p-2 rounded-lg sm:rounded-full text-2xl sm:text-xl flex-1 sm:flex-initial items-center flex justify-center"
-              : "bg-white text-gray-700 dark:bg-gray-700 dark:text-gray-200 dark:shadow-gray-700 hover:bg-violet-600 hover:text-gray-200 dark:hover:bg-violet-600 shadow hover:shadow-md font-bold p-2 rounded-lg sm:rounded-full text-2xl sm:text-xl flex-1 sm:flex-initial items-center flex justify-center"
+              ? "bg-indigo-600 dark:bg-violet-600 text-gray-200 dark:shadow-gray-700 hover:bg-yellow-500 hover:text-gray-700 dark:hover:bg-red-500 dark:hover:text-gray-200 shadow hover:shadow-md font-bold p-2 rounded-lg sm:rounded-full text-2xl sm:text-xl flex-1 sm:flex-initial items-center flex justify-center"
+              : "bg-white text-gray-700 dark:bg-gray-700 dark:text-gray-200 dark:shadow-gray-700 hover:bg-indigo-600 hover:text-gray-200 dark:hover:bg-violet-600 shadow hover:shadow-md font-bold p-2 rounded-lg sm:rounded-full text-2xl sm:text-xl flex-1 sm:flex-initial items-center flex justify-center"
           }
+          ignoreCancelEvents={false}
         >
           {page.icon}
         </Link>
