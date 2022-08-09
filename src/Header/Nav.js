@@ -5,7 +5,7 @@ import { BsFillExclamationSquareFill } from "react-icons/bs";
 import { CgEditUnmask } from "react-icons/cg";
 import { GrContact } from "react-icons/gr";
 import { NavLink } from "react-router-dom";
-import useAdmin from './../Hooks/useAdmin';
+import useAdmin from "./../Hooks/useAdmin";
 import Logout from "./Logout";
 const Nav = ({ small }) => {
   const { status } = useAdmin();
@@ -17,7 +17,7 @@ const Nav = ({ small }) => {
     },
     {
       name: "Skills",
-      link: "/skills#development",
+      link: "/skills",
       icon: <CgEditUnmask />,
     },
     {
@@ -53,7 +53,7 @@ const Nav = ({ small }) => {
             <p className="text-[8px] sm:text-sm">{page.name}</p>
           </NavLink>
         ))}
-        {status && <Logout/>}
+        {status && <Logout />}
       </HStack>
     );
   } else {
@@ -72,7 +72,7 @@ const Nav = ({ small }) => {
             {page.name}
           </NavLink>
         ))}
-        {status && <Logout/>}
+        {status && <Logout />}
       </HStack>
     );
   }

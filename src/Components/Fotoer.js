@@ -1,12 +1,13 @@
 import React from "react";
+import { AiOutlineArrowUp } from "react-icons/ai";
 import {
-  RiArrowUpSLine,
   RiFacebookCircleFill,
   RiGithubFill,
   RiLinkedinBoxFill,
   RiTwitterFill,
 } from "react-icons/ri";
 import { SiFreelancer } from "react-icons/si";
+import ScrollToTop from "react-scroll-to-top";
 const Footer = () => {
   const socs = [
     {
@@ -38,15 +39,6 @@ const Footer = () => {
   return (
     <footer className="bg-gray-100 dark:bg-gray-800 mt-auto">
       <div className="relative max-w-5xl px-4 my-4 flex flex-col gap-3 mx-auto sm:px-6 lg:px-8 lg:flex-row lg:justify-between lg:items-center lg:py-8 ">
-        <div className="absolute right-10 -top-3  ">
-          <a
-            className="inline-block text-teal-300 transition bg-gray-700 shadow-md rounded-full p-2 hover:bg-gray-600"
-            href={"#root"}
-          >
-            <span className="sr-only">Back to top</span>
-            <RiArrowUpSLine />
-          </a>
-        </div>
         <p className=" text-lg font-bold text-center text-gray-400 lg:text-left ">
           Juel Hossain
         </p>
@@ -69,6 +61,12 @@ const Footer = () => {
           Copyright &copy; 2022. All rights reserved.
         </p>
       </div>
+      <ScrollToTop
+        className="items-center flex justify-center text-2xl bg-yellow-500 z-[999]"
+        smooth
+        top={500}
+        component={<AiOutlineArrowUp />}
+      />
     </footer>
   );
 };

@@ -1,90 +1,55 @@
-import { Center, Link, Text } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import { Center } from "@chakra-ui/react";
+import React from "react";
 import { HiDesktopComputer } from "react-icons/hi";
 import { MdDeveloperMode, MdOutlineDesignServices } from "react-icons/md";
 import { TbSettingsAutomation } from "react-icons/tb";
-import { useLocation } from "react-router-dom";
-
+import { Link } from "react-scroll";
 const SkillsNav = () => {
-  const [dev, setDev] = useState(false);
-  const [automation, setAutomation] = useState(false);
-  const [design, setDesign] = useState(false);
-  const [computer, setComputer] = useState(false);
-  const { hash } = useLocation();
-  useEffect(() => {
-    switch (hash) {
-      case "#development":
-        setDev(true);
-        setAutomation(false);
-        setDesign(false);
-        setComputer(false);
-        break;
-      case "#automation":
-        setDev(false);
-        setAutomation(true);
-        setDesign(false);
-        setComputer(false);
-        break;
-      case "#design":
-        setDev(false);
-        setAutomation(false);
-        setDesign(true);
-        setComputer(false);
-        break;
-      case "#computer":
-        setDev(false);
-        setAutomation(false);
-        setDesign(false);
-        setComputer(true);
-        break;
-      default:
-        break;
-    }
-  }, [hash]);
-
   const pages = [
     {
       name: "Development",
-      link: "#development",
-      matcher: dev,
-      icon: <MdDeveloperMode className="md:hidden text-2xl " />,
+      link: "development",
+      icon: <MdDeveloperMode />,
+      default: true,
     },
     {
       name: "Automation",
-      link: "#automation",
-      matcher: automation,
-      icon: <TbSettingsAutomation className="md:hidden text-2xl" />,
+      link: "automation",
+      icon: <TbSettingsAutomation />,
     },
     {
       name: "Design",
-      link: "#design",
-      matcher: design,
-      icon: <MdOutlineDesignServices className="md:hidden text-2xl" />,
+      link: "design",
+      icon: <MdOutlineDesignServices />,
     },
     {
       name: "Computer",
-      link: "#computer",
-      matcher: computer,
-      icon: <HiDesktopComputer className="md:hidden text-2xl" />,
+      link: "computer",
+      icon: <HiDesktopComputer />,
     },
   ];
   return (
     <Center
       className={
-        "gap-2 p-2 shadow bg-zinc-50 dark:bg-zinc-900  border-indigo-400 sticky top-10 z-10  "
+        "gap-2  shadow border bg-white dark:bg-gray-800 dark:border-gray-700 h-auto sm:w-1 sm:h-[50vh] sm:top-0 sm:bottom-0 my-auto sticky top-14 sm:fixed z-[999] sm:flex-col sm:justify-between p-2"
       }
     >
       {pages.map((page) => (
         <Link
+          spy
+          hashSpy
+          smooth
+          duration={500}
+          offset={page.default ? -200 : -150}
           key={Math.random()}
-          href={page.link}
+          to={page.link}
+          activeClass={
+            "bg-violet-500 text-gray-200 dark:bg-red-500 text-gray-700 dark:text-gray-200 shadow font-bold dark:shadow-gray-700 "
+          }
           className={
-            page.matcher
-              ? "bg-indigo-600 text-zinc-50 shadow font-bold px-3 py-1 dark:shadow-gray-700 "
-              : "hover:bg-indigo-600 hover:text-zinc-50 shadow hover:shadow-md font-bold px-3 py-1 dark:shadow-gray-700 "
+            "sm:hover:bg-violet-600 sm:hover:text-gray-200 sm:dark:hover:bg-red-500 shadow hover:shadow-md font-bold dark:shadow-gray-700 dark:bg-gray-700 dark:text-gray-200 p-2 rounded-lg sm:rounded-full text-2xl sm:text-xl flex-1 sm:flex-initial items-center flex justify-center bg-white text-gray-700 "
           }
         >
-          <Text className="hidden md:block">{page.name}</Text>
           {page.icon}
         </Link>
       ))}
