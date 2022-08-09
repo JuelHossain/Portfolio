@@ -4,13 +4,13 @@ import useAdmin from "../../../Hooks/useAdmin";
 import CreateCard from "../Create/CreateCard";
 import SkillsCard from "../SkillsCard";
 
-export function SkillsSection({ id, skills }) {
+export function SkillsSection({ id, skills,cls }) {
   const { status } = useAdmin();
   const [data, loading, error, refetch] = skills;
 
   error && console.log(error);
   return (
-    <Box id={id}>
+    <Box id={id} className={`${cls} sm:ml-8`}>
       <PageTitle>{`${id} Skills`}</PageTitle>
       <SimpleGrid columns={[1, 2, 3, 4]} spacing="2">
         {data?.map((sk) => (
@@ -23,7 +23,7 @@ export function SkillsSection({ id, skills }) {
 }
 
 export function Development({ skills }) {
-  return <SkillsSection id={"development"} skills={skills} />;
+  return <SkillsSection id={"development"} skills={skills} cls={"my-5 sm:my-0"} />;
 }
 export function Automation({ skills }) {
   return <SkillsSection id={"automation"} skills={skills} />;

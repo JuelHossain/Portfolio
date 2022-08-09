@@ -1,5 +1,5 @@
 import { Center } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { HiDesktopComputer } from "react-icons/hi";
 import { MdDeveloperMode, MdOutlineDesignServices } from "react-icons/md";
 import { TbSettingsAutomation } from "react-icons/tb";
@@ -28,6 +28,12 @@ const SkillsNav = () => {
       icon: <HiDesktopComputer />,
     },
   ];
+  const [active, setActive] = useState({
+    development: false,
+    automation: false,
+    design: false,
+    computer: false,
+  });
   return (
     <Center
       className={
@@ -44,10 +50,19 @@ const SkillsNav = () => {
           key={Math.random()}
           to={page.link}
           activeClass={
-            "bg-violet-500 text-gray-200 dark:bg-red-500 text-gray-700 dark:text-gray-200 shadow font-bold dark:shadow-gray-700 "
+            "bg-violet-500 text-gray-200 dark:bg-red-500 dark:text-gray-700 dark:text-gray-200 shadow font-bold dark:shadow-gray-700 "
           }
+          onSetActive={(e) => {
+            setActive((p) =>{ return {...p, e}});
+            console.log(active);
+          }}
+          onSetInactive={(e) => {
+            setActive(false);
+          }}
           className={
-            "sm:hover:bg-violet-600 sm:hover:text-gray-200 sm:dark:hover:bg-red-500 shadow hover:shadow-md font-bold dark:shadow-gray-700 dark:bg-gray-700 dark:text-gray-200 p-2 rounded-lg sm:rounded-full text-2xl sm:text-xl flex-1 sm:flex-initial items-center flex justify-center bg-white text-gray-700 "
+            active
+              ? ""
+              : "sm:hover:bg-violet-600 sm:hover:text-gray-200 sm:dark:hover:bg-red-500 shadow hover:shadow-md font-bold dark:shadow-gray-700 dark:bg-gray-700 dark:text-gray-200 p-2 rounded-lg sm:rounded-full text-2xl sm:text-xl flex-1 sm:flex-initial items-center flex justify-center bg-white text-gray-700 "
           }
         >
           {page.icon}

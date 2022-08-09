@@ -23,10 +23,9 @@ const Skills = () => {
   return (
     <Container
       maxW={"container.lg"}
-      className="my-5 sm:my-10 scroll-smooth relative sm:flex space-y-10 "
+      className="scroll-smooth relative my-5 sm:my-10 "
     >
       <SkillsNav />
-      <Box className="sm:ml-8 space-y-10">
         <Development skills={development} />
         <Automation skills={automation} />
         <Design skills={design} />
@@ -37,7 +36,6 @@ const Skills = () => {
             Where I Have Learned These Skills&rarr;
           </Link>
         </VisitMore>
-      </Box>
     </Container>
   );
 };
