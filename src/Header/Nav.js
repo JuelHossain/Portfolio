@@ -1,41 +1,38 @@
 import { HStack } from "@chakra-ui/react";
 import React from "react";
 import { AiFillHome, AiFillProject } from "react-icons/ai";
-import { BiChat } from "react-icons/bi";
-import { BsChatLeftTextFill, BsChatSquareDots, BsChatSquareDotsFill, BsFillExclamationSquareFill } from "react-icons/bs";
+import {
+  BsChatSquareDotsFill,
+  BsFillExclamationSquareFill,
+} from "react-icons/bs";
 import { CgEditUnmask } from "react-icons/cg";
-import { GrContact } from "react-icons/gr";
-import { MdContactPage } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-import useAdmin from "./../Hooks/useAdmin";
-import Logout from "./Logout";
 const Nav = ({ small }) => {
-  const { status } = useAdmin();
   const pages = [
     {
       name: "Home",
       link: "/",
-      icon: <AiFillHome />,
+      icon: <AiFillHome className="text-lg" />,
     },
     {
       name: "Skills",
       link: "/skills",
-      icon: <CgEditUnmask />,
+      icon: <CgEditUnmask className="text-lg" />,
     },
     {
       name: "Projects",
       link: "/projects",
-      icon: <AiFillProject />,
+      icon: <AiFillProject className="text-lg" />,
     },
     {
       name: "About",
       link: "/about",
-      icon: <BsFillExclamationSquareFill className="text-sm" />,
+      icon: <BsFillExclamationSquareFill className="text-md" />,
     },
     {
       name: "Contact",
       link: "/contact",
-      icon: <BsChatSquareDotsFill className="text-sm " />,
+      icon: <BsChatSquareDotsFill className="text-md " />,
     },
   ];
   if (small) {
@@ -47,15 +44,14 @@ const Nav = ({ small }) => {
             to={page.link}
             className={({ isActive }) =>
               isActive
-                ? "bg-yellow-400 shadow-md font-bold py-1 dark:text-zinc-900  flex flex-col items-center sm:flex-row sm:gap-2 flex-1 sm:items-center sm:justify-center"
-                : "hover:bg-yellow-400 shadow hover:shadow-md font-bold  py-1 dark:text-zinc-50 dark:hover:text-zinc-900 dark:bg-gray-700 dark:shadow-gray-700 flex flex-col items-center sm:flex-row sm:gap-2 flex-1 sm:items-center sm:justify-center"
+                ? "bg-yellow-400 shadow-md font-bold    flex flex-col items-center sm:flex-row sm:gap-2 flex-1 sm:items-center sm:justify-center dark:bg-red-500 dark:text-gray-200 py-2 gap-1"
+                : "hover:bg-yellow-400 shadow hover:shadow-md font-bold  py-2 dark:text-gray-200 dark:bg-gray-700 dark:shadow-gray-700 flex flex-col items-center sm:flex-row sm:gap-2 flex-1 sm:items-center sm:justify-center dark:hover:bg-red-500  sm:text-md gap-1 "
             }
           >
             {page.icon}
-            <p className="text-[8px] sm:text-sm">{page.name}</p>
+            <p className="text-xs sm:text-sm">{page.name}</p>
           </NavLink>
         ))}
-        {status && <Logout />}
       </HStack>
     );
   } else {
@@ -67,14 +63,13 @@ const Nav = ({ small }) => {
             to={page.link}
             className={({ isActive }) =>
               isActive
-                ? "bg-yellow-400 shadow-md font-bold px-3 py-1 dark:text-zinc-900 "
-                : "hover:bg-yellow-400 shadow hover:shadow-md font-bold px-3 py-1 dark:text-zinc-50 dark:hover:text-zinc-900 dark:bg-gray-700 dark:shadow-gray-700 dark:hover:bg-yellow-400"
+                ? "bg-yellow-400 shadow-md font-bold px-3 py-1 dark:bg-red-500 dark:text-gray-200 dark:hover:bg-gray-700 hover:bg-transparent"
+                : "hover:bg-yellow-400 shadow hover:shadow-md font-bold px-3 py-1 dark:text-zinc-50  dark:bg-gray-700 dark:shadow-gray-700 dark:hover:bg-red-500 duration-300 "
             }
           >
             {page.name}
           </NavLink>
         ))}
-        {status && <Logout />}
       </HStack>
     );
   }

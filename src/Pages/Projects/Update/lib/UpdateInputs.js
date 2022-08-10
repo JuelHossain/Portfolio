@@ -40,8 +40,8 @@ export function UpdateTitle({ value, register }) {
 export function UpdateAbout({ value, register }) {
   return (
     <Editable defaultValue={value}>
-      <EditablePreview className="md:h-36 overflow-hidden" />
-      <EditableTextarea className="md:h-36 " {...register("about")} />
+      <EditablePreview className="h-20 md:h-36 hover:overflow-auto overflow-hidden" />
+      <EditableTextarea className="h-20 md:h-36 " {...register("about")} />
     </Editable>
   );
 }

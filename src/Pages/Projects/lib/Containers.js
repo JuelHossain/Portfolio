@@ -18,7 +18,7 @@ export function TextContainer({ children }) {
 }
 export function ImageContainer({ children }) {
   return (
-    <Box className=" rounded-l md:h-full overflow-hidden md:w-1/2 h-60 sm:h-80 relative">
+    <Box className=" rounded-l md:h-full overflow-hidden md:w-1/2 h-44 sm:h-80 relative">
       {children}
     </Box>
   );

@@ -36,23 +36,19 @@ const Login = () => {
     }
   };
   return (
-    <Container>
-      <Flex
-        minH={"80vh"}
-        align={"center"}
-        justify={"center"}
-        bg={useColorModeValue("gray.50", "gray.800")}
-      >
+    <Container maxW={"container.lg"}>
+      <Flex minH={"80vh"} align={"center"} justify={"center"}>
         <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
           <Box
             rounded={"lg"}
-            bg={useColorModeValue("white", "gray.700")}
             boxShadow={"lg"}
             p={8}
+            className="shadow-xl text-gray-500 dark:shadow-gray-700"
           >
             <Stack spacing={4} as={"form"} onSubmit={login}>
               <FormControl id="password">
                 <Input
+                  className="dark:shadow-gray-700 shadow border-gray-200 dark:border-gray-700"
                   type="password"
                   value={password}
                   onChange={(e) => {
@@ -61,12 +57,8 @@ const Login = () => {
                 />
               </FormControl>
               <Button
+                className="dark:shadow-gray-700 shadow border-gray-200 dark:border-gray-700 dark:bg-red-500 bg-yellow-500"
                 type="submit"
-                bg={"blue.400"}
-                color={"white"}
-                _hover={{
-                  bg: "blue.500",
-                }}
               ></Button>
             </Stack>
           </Box>

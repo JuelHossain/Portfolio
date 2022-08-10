@@ -9,7 +9,20 @@
       name="description"
       content="Web site created using create-react-app"
     />
-
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        console.log('dark');
+        document.documentElement.classList.add("dark");
+      } else {
+        console.log('light');
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
