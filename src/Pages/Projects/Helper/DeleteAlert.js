@@ -20,7 +20,7 @@ export default function DeleteAlert({ isOpen, onClose, id, exec, refresh }) {
         isCentered
       >
         <AlertDialogOverlay>
-          <AlertDialogContent>
+          <AlertDialogContent className="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200">
             <AlertDialogHeader fontSize="lg" fontWeight="bold">
               Are You Sure?
             </AlertDialogHeader>
@@ -30,7 +30,7 @@ export default function DeleteAlert({ isOpen, onClose, id, exec, refresh }) {
             </AlertDialogBody>
 
             <AlertDialogFooter>
-              <Button ref={cancelRef} onClick={onClose}>
+              <Button className="dark:bg-gray-700" ref={cancelRef} onClick={onClose}>
                 Cancel
               </Button>
               <Button
