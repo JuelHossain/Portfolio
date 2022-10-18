@@ -3,14 +3,16 @@ import Contact from "../Contact/Contact";
 import Projects from "../Projects/Projects";
 import Services from "../Services/Services";
 import Banner from "./Banner";
+import Certification from "./Certification";
 import SkillsOverView from "./SkillsOverView";
 
 const Home = () => {
   return (
     <div className="flex flex-col">
       <Banner />
-      <Services />
+      <Certification />
       <SkillsOverView />
+      <Services />
       <Projects home={true} size={2} />
       <Contact />
     </div>
