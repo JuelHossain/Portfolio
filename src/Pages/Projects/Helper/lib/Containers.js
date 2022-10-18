@@ -11,7 +11,7 @@ export function PContainer({ children, h = "md:h-[450px]" }) {
 }
 export function TextContainer({ children }) {
   return (
-    <Box className=" rounded shadow md:w-1/2 md:p-8 p-4 justify-between flex flex-col relative">
+    <Box className=" rounded shadow md:w-1/2 md:p-8 p-4 justify-between flex flex-col relative gap-5">
       {children}
     </Box>
   );

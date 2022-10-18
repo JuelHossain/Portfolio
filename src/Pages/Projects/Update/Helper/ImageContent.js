@@ -2,8 +2,8 @@ import { Image } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import Loading from "../../../../Components/Loading";
 import useProject from "../../../../Hooks/useProject";
-import { ImageContainer } from "../../lib/Containers";
-import UploadScreenshot from "../../lib/UploadScreenshot";
+import { ImageContainer } from "../../Helper/lib/Containers";
+import UploadScreenshot from "../../Helper/lib/UploadScreenshot";
 const ImageContent = ({ id, register, watch, create }) => {
   const { project: { screenshot } = {}, projectLoading } = useProject(id);
   const [preview, setPreview] = useState("");

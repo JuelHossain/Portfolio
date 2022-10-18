@@ -2,8 +2,7 @@ import { Box, Divider } from "@chakra-ui/react";
 import React from "react";
 import Loading from "../../../../Components/Loading";
 import useProject from "../../../../Hooks/useProject";
-
-import { TextContainer } from "../../lib/Containers";
+import { TextContainer } from "../../Helper/lib/Containers";
 import {
   UpdateAbout,
   UpdateGit,

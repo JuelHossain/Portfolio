@@ -1,10 +1,7 @@
 import axios from "axios";
 
 export const createProject = async (newProject) => {
-  const { data } = await axios.post(
-    "http://localhost:5000/projects",
-    newProject
-  );
+  const { data } = await axios.post("/projects", newProject);
   return data;
 };
 
@@ -22,10 +19,7 @@ export const getProject = async (id) => {
 
 // updating project
 export const updateProject = async (id, updatedData) => {
-  const { data } = await axios.put(
-    `/projects/${id}`,
-    updatedData
-  );
+  const { data } = await axios.put(`/projects/${id}`, updatedData);
   return data;
 };
 

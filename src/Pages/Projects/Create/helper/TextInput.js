@@ -1,6 +1,7 @@
 import { VStack } from "@chakra-ui/react";
 import React from "react";
-import { TextContainer } from "../../lib/Containers";
+import { TextContainer } from "../../Helper/lib/Containers";
+
 import {
   AboutInput,
   GitInput,

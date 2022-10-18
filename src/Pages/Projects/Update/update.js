@@ -4,8 +4,8 @@ import Loading from "../../../Components/Loading";
 import { updateProject } from "../../../Hooks/Helper/Projects";
 import useProject from "../../../Hooks/useProject";
 import imgbb from "../../../utils/imgbb";
+import { PContainer } from "../Helper/lib/Containers";
 import ProjectModal from "../Helper/ProjectModal";
-import { PContainer } from "./../lib/Containers";
 import ImageContent from "./Helper/ImageContent";
 import TextContent from "./Helper/textContent";
 export default function UpdateProject({ isOpen, onClose, id }) {

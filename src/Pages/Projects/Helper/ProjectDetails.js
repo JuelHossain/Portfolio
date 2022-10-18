@@ -9,7 +9,8 @@ import React from "react";
 import useAdmin from "../../../Hooks/useAdmin";
 import useProject from "../../../Hooks/useProject";
 import AdminButtons from "../Admin/AdminButtons";
-import { TextContainer } from "../lib/Containers";
+import { TextContainer } from "../Helper/lib/Containers";
+
 import {
   About,
   Git,
@@ -17,7 +18,7 @@ import {
   Name,
   ServerGit,
   Title,
-} from "../lib/ProjectDetails";
+} from "../Helper/lib/ProjectDetails";
 
 const ProjectDetails = ({ id }) => {
   const {

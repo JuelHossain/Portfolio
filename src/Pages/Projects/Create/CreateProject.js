@@ -5,9 +5,9 @@ import Loading from "../../../Components/Loading";
 import { createProject } from "../../../Hooks/Helper/Projects";
 import useProjects from "../../../Hooks/useProjects";
 import imgbb from "../../../utils/imgbb";
+import { PContainer } from "../Helper/lib/Containers";
 import ProjectModal from "../Helper/ProjectModal";
 import ImageContent from "../Update/Helper/ImageContent";
-import { PContainer } from "./../lib/Containers";
 import TextInput from "./helper/TextInput";
 
 const CreateProject = ({ onClose, isOpen }) => {
@@ -63,7 +63,7 @@ const CreateProject = ({ onClose, isOpen }) => {
       header={"Create A Project"}
       footer={"Create"}
       execute={submit}
-      size={'4xl'}
+      size={"4xl"}
     >
       <PContainer>
         <ImageContent create register={register} watch={watch} />

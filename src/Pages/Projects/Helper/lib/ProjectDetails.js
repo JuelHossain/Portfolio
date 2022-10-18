@@ -1,4 +1,4 @@
-import { Button, Heading, IconButton, Text } from "@chakra-ui/react";
+import { Button, Heading, IconButton, Link, Text } from "@chakra-ui/react";
 import { AiFillGithub } from "react-icons/ai";
 
 export function Name({ name }) {
@@ -17,9 +17,9 @@ export function About({ about }) {
 export function Git({ git }) {
   return (
     <IconButton
-      as={"a"}
+      as={Link}
+      isExternal
       href={git}
-      target={"_blank"}
       icon={<AiFillGithub />}
       className="bg-white shadow hover:bg-stone-900 hover:text-white dark:bg-gray-700 dark:hover:bg-black "
     />
@@ -28,10 +28,11 @@ export function Git({ git }) {
 export function ServerGit({ serverGit }) {
   return (
     <Button
-      leftIcon={<AiFillGithub />}
-      className="bg-white shadow  hover:bg-stone-900 dark:hover:bg-black  hover:text-white dark:bg-gray-700"
-      as={"a"}
+      as={Link}
+      isExternal
       href={serverGit}
+      leftIcon={<AiFillGithub />}
+      className="bg-white shadow  hover:bg-stone-900 dark:hover:bg-black  hover:text-white dark:bg-gray-700 hover:no-underline"
     >
       Server
     </Button>
@@ -40,8 +41,9 @@ export function ServerGit({ serverGit }) {
 export function LiveSite({ liveSite }) {
   return (
     <Button
-      className="bg-white shadow dark:hover:bg-red-500 hover:bg-red-500 hover:text-white dark:bg-gray-700"
-      as={"a"}
+      as={Link}
+      isExternal
+      className="bg-white shadow dark:hover:bg-red-500 hover:bg-red-500 hover:text-white dark:bg-gray-700 hover:no-underline"
       href={liveSite}
     >
       Live Site

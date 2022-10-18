@@ -66,7 +66,7 @@ const Header = () => {
               href="/"
               id="logo"
               size="lg"
-              className="text-zinc-900 dark:text-zinc-100 truncate"
+              className=" truncate"
             >
               Juel Hossain
             </Heading>

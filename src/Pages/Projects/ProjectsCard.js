@@ -1,5 +1,6 @@
 import React from "react";
-import { PContainer } from "./lib/Containers";
+import { PContainer } from "./Helper/lib/Containers";
+
 import ProjectDetails from "./Helper/ProjectDetails";
 import Screenshot from "./Helper/Screenshot";
 const ProjectsCard = ({ id }) => {
