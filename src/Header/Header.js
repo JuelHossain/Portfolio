@@ -59,7 +59,7 @@ const Header = () => {
       className="sticky top-0 z-40 bg-zinc-50 dark:bg-zinc-900 py-3 border-b dark:border-zinc-800 border-zinc-50 shadow"
     >
       <Container maxW={"container.lg"}>
-        <Flex gap={4} justify="space-between">
+        <Flex gap={4} justify="space-between" className="flex-wrap">
           <Center>
             <Heading as="a" href="/" id="logo" size="lg" className=" truncate">
               Juel Hossain
