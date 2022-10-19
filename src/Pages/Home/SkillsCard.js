@@ -1,7 +1,9 @@
-const SkillsCard = ({ skill }) => {
-  const { bg, title, text, icon } = skill;
+const SkillsCard = ({skill}) => {
+   const { bg, title, text, icon } = skill;
   return (
-    <div className={`${bg} relative block overflow-hidden bg  rounded-xl `}>
+    <div
+      className={`${bg} relative block overflow-hidden bg  rounded-xl shadow shadow-yellow-500/50 dark:shadow-red-900/50 `}
+    >
       <span className="absolute z-10 inline-flex items-center px-3 py-1 text-3xl font-semibold text-white rounded-full  right-4 top-4">
         {icon}
       </span>

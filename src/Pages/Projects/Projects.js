@@ -2,6 +2,7 @@ import { Container, Stack } from "@chakra-ui/react";
 import React from "react";
 import Loading from "../../Components/Loading";
 import PageTitle from "../../Components/PageTitle";
+import Section from "../../Components/Section";
 import VisitMore from "../../Components/VisitMore";
 import useAdmin from "../../Hooks/useAdmin";
 import useProjects from "./../../Hooks/useProjects";
@@ -19,7 +20,7 @@ const Projects = ({ home, size }) => {
     );
   }
   return (
-    <Container maxW={"container.lg"} className="my-5 sm:my-10 relative">
+    <Section>
       <PageTitle>Projects I have done.</PageTitle>
       {status && !home && <CreateButton />}
       <Stack spacing="10">
@@ -28,7 +29,7 @@ const Projects = ({ home, size }) => {
         ))}
       </Stack>
       {home && <VisitMore section={"Project"} link="/projects" />}
-    </Container>
+    </Section>
   );
 };
 

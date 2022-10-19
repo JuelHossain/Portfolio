@@ -1,4 +1,4 @@
-import { Box, Container, Link } from "@chakra-ui/react";
+import { Container, Link } from "@chakra-ui/react";
 import React from "react";
 import Loading from "../../Components/Loading";
 import VisitMore from "../../Components/VisitMore";
@@ -23,19 +23,20 @@ const Skills = () => {
   return (
     <Container
       maxW={"container.lg"}
-      className="scroll-smooth relative my-5 sm:my-10 flex flex-col gap-10 "
+      className="scroll-smooth relative my-5  flex flex-col gap-10 "
     >
       <SkillsNav />
-        <Development skills={development} />
-        <Automation skills={automation} />
-        <Design skills={design} />
-        <Computer skills={computer} />
-        <VisitMore>
-          Want To Know ?
-          <Link href="/about" className="underline">
-            Where I Have Learned These Skills&rarr;
-          </Link>
-        </VisitMore>
+      <Development skills={development} />
+      <Automation skills={automation} />
+      <Design skills={design} />
+      <Computer skills={computer} />
+
+      <VisitMore m>
+        Want To Know ?
+        <Link href="/about" className="underline ">
+          Where I Have Learned These Skills&rarr;
+        </Link>
+      </VisitMore>
     </Container>
   );
 };

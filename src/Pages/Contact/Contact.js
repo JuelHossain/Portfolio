@@ -1,13 +1,13 @@
-import { Container } from "@chakra-ui/react";
 import React from "react";
 import PageTitle from "../../Components/PageTitle";
+import Section from "../../Components/Section";
 import VisitMore from "../../Components/VisitMore";
 import Form from "./Form";
 import Map from "./Map";
 
 const Contact = ({ home }) => {
   return (
-    <Container maxW="container.lg" className="my-5 sm:my-10 ">
+    <Section>
       <PageTitle>Contact Me</PageTitle>
       <div className={`flex sm:flex-nowrap flex-wrap gap-4`}>
         <Map />
@@ -15,9 +15,8 @@ const Contact = ({ home }) => {
       </div>
       <VisitMore>
         <p>Thank You For Visiting My Website</p>
-        
       </VisitMore>
-    </Container>
+    </Section>
   );
 };
 

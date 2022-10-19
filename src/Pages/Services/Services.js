@@ -1,23 +1,25 @@
-import { Container, Link, SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import React from "react";
 import { CgWebsite } from "react-icons/cg";
 import { MdBrandingWatermark, MdOutlineDesignServices } from "react-icons/md";
 import { TbSettingsAutomation } from "react-icons/tb";
+import { Link } from "react-router-dom";
 import branding from "../../assets/services/automation1.jpg";
 import design from "../../assets/services/Branding.jpg";
 import fullstack from "../../assets/services/coding.jpg";
 import website from "../../assets/services/websiteDesign.jpg";
 import PageTitle from "../../Components/PageTitle";
+import Section from "../../Components/Section";
 import VisitMore from "../../Components/VisitMore";
 import ServicesCard from "./ServicesCard";
 const Services = () => {
   const services = [
     {
       photo: website,
-      icon: MdOutlineDesignServices,
+      icon: <MdOutlineDesignServices />,
       title: "Website Design",
       text: "I Can Design front end website. also make it very gorgeous and beautiful if i got some time.",
-      reting: "4.9",
+      rating: "4.9",
     },
     {
       photo: fullstack,
@@ -54,18 +56,18 @@ const Services = () => {
     );
   });
   return (
-    <Container maxW={"container.lg"} className="my-5 sm:my-10">
+    <Section>
       <PageTitle>What I can Offer ?</PageTitle>
       <SimpleGrid columns={[1, 2]} spacing="4">
         {serviceCards}
       </SimpleGrid>
       <VisitMore>
         Please Contact Me
-        <Link href="/contact" className="underline">
+        <Link to="/contact" className="underline">
           To Discuss Your work &rarr;
         </Link>
       </VisitMore>
-    </Container>
+    </Section>
   );
 };
 

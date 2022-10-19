@@ -1,4 +1,4 @@
-import { Container, SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import { FaKeyboard } from "react-icons/fa";
 import {
   SiExpress,
@@ -10,6 +10,7 @@ import {
   SiWebdriverio,
 } from "react-icons/si";
 import PageTitle from "../../Components/PageTitle";
+import Section from "../../Components/Section";
 import VisitMore from "../../Components/VisitMore";
 import SkillsCard from "./SkillsCard";
 
@@ -68,14 +69,14 @@ const SkillsOverView = () => {
     return <SkillsCard skill={skill} />;
   });
   return (
-    <Container maxW={"container.lg"} className="my-5 sm:my-10">
+    <Section>
       <PageTitle>Skills Overview</PageTitle>
 
       <SimpleGrid columns={[1, 2, 3, 4]} spacing="4">
         {skillsCards}
       </SimpleGrid>
       <VisitMore link={"/skills#root"} section="Skills" />
-    </Container>
+    </Section>
   );
 };
 

@@ -22,9 +22,12 @@ const Banner = () => {
   ];
 
   return (
-    <Container maxW="container.lg" className="my-5 sm:my-10 rounded">
+    <Container
+      maxW="container.lg"
+      className="my-5 mt-10 rounded   border border-zinc-200 dark:border-gray-700 dark:bg-gray-800 p-0 bg-white "
+    >
       <Flex direction={["column-reverse", "column-reverse", "row-reverse"]}>
-        <Center className="flex-1 w-full shadow hover:shadow-md dark:shadow-gray-700 dark:bg-gray-800 pb-4 sm:p-4">
+        <Center className="flex-1 w-full  pb-4 sm:p-4 sm:pl-0 border-l dark:border-gray-700">
           <VStack p="4" alignItems={["center", "center", "start"]}>
             <Heading className="text-4xl sm:text-5xl font-extrabold sm:font-black ">
               Juel Hossain
@@ -35,7 +38,7 @@ const Banner = () => {
             >
               <ReactTyped strings={titles} typeSpeed={80} backSpeed={50} loop />
             </Heading>
-            <Text textAlign={["center", "center", "left"]}>
+            <Text textAlign={["center", "center", "left"]} className="max-w-md">
               Hey, Hi. Welcome to My site. Please Go Ahead And Explore More
               about me.
             </Text>
@@ -46,10 +49,7 @@ const Banner = () => {
             />
           </VStack>
         </Center>
-        <Center
-          w={["auto", "auto", 350, 400]}
-          className="shadow hover:shadow-md dark:shadow-gray-700 dark:bg-gray-800"
-        >
+        <Center w={["auto", "auto", 350, 400]} className=" ">
           <Image className="w-auto" fit={"cover"} src={me} align="top"></Image>
         </Center>
       </Flex>
