@@ -7,7 +7,7 @@ import Map from "./Map";
 
 const Contact = ({ home }) => {
   return (
-    <Section>
+    <Section cls={home || "my-5 md:my-10"}>
       <PageTitle>Contact Me</PageTitle>
       <div className={`flex sm:flex-nowrap flex-wrap gap-4`}>
         <Map />

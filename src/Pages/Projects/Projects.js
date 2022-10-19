@@ -20,7 +20,7 @@ const Projects = ({ home, size }) => {
     );
   }
   return (
-    <Section>
+    <Section cls={home || "my-5 md:my-10"}>
       <PageTitle>Projects I have done.</PageTitle>
       {status && !home && <CreateButton />}
       <Stack spacing="10">

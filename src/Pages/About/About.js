@@ -15,7 +15,10 @@ const About = () => {
     );
   }
   return (
-    <Container maxW={"container.lg"} className="my-5 sm:my-10 space-y-10">
+    <Container
+      maxW={"container.lg"}
+      className="my-5 md:my-10 space-y-5 md:space-y-10 p-0 overflow-auto overflow-x-hidden"
+    >
       <Head />
       <Courses info={courses} />
       <Experiences info={experiences} />

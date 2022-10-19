@@ -21,7 +21,7 @@ function App() {
   !session && updateStatus(false);
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen flex flex-col bg-zinc-50 dark:bg-zinc-900 text-gray-800 dark:text-zinc-200 relative px-2">
+      <div className="min-h-screen flex flex-col bg-zinc-50 dark:bg-zinc-900 text-gray-800 dark:text-zinc-200 relative px-2 xl:px-0">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -32,7 +32,7 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/maintenance" element={<Login />} />
         </Routes>
-        <Center className="sticky bottom-0 bg-zinc-50 dark:bg-zinc-900 p-2 z-40 w-full">
+        <Center className="sticky bottom-0 bg-zinc-50 dark:bg-zinc-900 py-2 z-40 w-full md:hidden">
           <Nav small={true} />
         </Center>
         <Footer />
