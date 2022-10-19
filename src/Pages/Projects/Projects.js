@@ -28,7 +28,21 @@ const Projects = ({ home, size }) => {
           <ProjectsCard key={Math.random()} id={project._id} />
         ))}
       </Stack>
-      {home && <VisitMore section={"Project"} link="/projects" />}
+      {home ? (
+        <VisitMore section={"Project"} link="/projects" />
+      ) : (
+        <VisitMore>
+          Please Visit My github Repos
+          <a
+            target="_blank"
+            href="https://github.com/JuelHossain?tab=repositories"
+            className="underline "
+            rel="noreferrer"
+          >
+            To See All of my projects&rarr;
+          </a>
+        </VisitMore>
+      )}
     </Section>
   );
 };

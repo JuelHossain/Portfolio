@@ -3,13 +3,13 @@ import { getProjects } from "./Helper/Projects";
 const useProjects = (singleId) => {
   // getting projects
   const {
-    data: projects,
+    data,
     isLoading: projectsLoading,
     error: projectsError,
     refetch,
   } = useQuery(["projects"], getProjects);
   // getting project
-
+  const projects = data ? [...data].reverse() : [];
   return {
     projects,
     projectsLoading,

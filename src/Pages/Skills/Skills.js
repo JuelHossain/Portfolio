@@ -1,5 +1,6 @@
-import { Container, Link } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
 import Loading from "../../Components/Loading";
 import VisitMore from "../../Components/VisitMore";
 import useSkills from "../../Hooks/useSkills";
@@ -33,7 +34,7 @@ const Skills = () => {
 
       <VisitMore m>
         Want To Know ?
-        <Link href="/about" className="underline ">
+        <Link to="/about" className="underline ">
           Where I Have Learned These Skills&rarr;
         </Link>
       </VisitMore>
