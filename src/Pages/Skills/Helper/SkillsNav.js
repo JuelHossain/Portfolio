@@ -41,7 +41,7 @@ const SkillsNav = () => {
           hashSpy
           smooth
           duration={500}
-          offset={page.default ? -200 : -180}
+          offset={page.default ? -200 : -105}
           key={Math.random()}
           to={page.link}
           onSetActive={(a, e) => {

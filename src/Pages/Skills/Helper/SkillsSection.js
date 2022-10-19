@@ -12,7 +12,7 @@ export function SkillsSection({ id, skills, cls }) {
   return (
     <Box
       id={id}
-      className={`${cls} sm:ml-10 py-10 rounded shadow  border
+      className={`${cls} sm:ml-10 py-5 md:py-10 rounded shadow  border
       border-gray-200/50  dark:border-gray-700/20 
       dark:bg-gray-800/20 bg-white/20 px-2`}
     >

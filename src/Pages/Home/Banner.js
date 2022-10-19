@@ -24,7 +24,7 @@ const Banner = () => {
   return (
     <Container
       maxW="container.lg"
-      className="my-5 mt-10 rounded   border border-zinc-200 dark:border-gray-700 dark:bg-gray-800 p-0 bg-white "
+      className="my-2 md:my-5 md:mt-10 rounded   border border-zinc-200 dark:border-gray-700 dark:bg-gray-800 p-0 bg-white "
     >
       <Flex direction={["column-reverse", "column-reverse", "row-reverse"]}>
         <Center className="flex-1 w-full  pb-4 sm:p-4 sm:pl-0 border-l dark:border-gray-700">

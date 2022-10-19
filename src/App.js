@@ -21,7 +21,7 @@ function App() {
   !session && updateStatus(false);
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen flex flex-col bg-zinc-50 dark:bg-zinc-900 text-gray-800 dark:text-zinc-200 relative">
+      <div className="min-h-screen flex flex-col bg-zinc-50 dark:bg-zinc-900 text-gray-800 dark:text-zinc-200 relative px-2">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
