@@ -45,15 +45,7 @@ const Services = () => {
   ];
 
   const serviceCards = services.map((service) => {
-    return (
-      <ServicesCard
-        service={service}
-        sp={
-          service.title === "FullStack Website" &&
-          "bg-yellow-400 dark:bg-red-500"
-        }
-      />
-    );
+    return <ServicesCard service={service} />;
   });
   return (
     <Section>
