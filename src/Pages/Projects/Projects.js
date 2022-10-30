@@ -21,7 +21,7 @@ const Projects = ({ home, size }) => {
   }
   return (
     <Section cls={home || "my-5 md:my-10"}>
-      <PageTitle>Projects I have done.</PageTitle>
+      <PageTitle>Projects I have done</PageTitle>
       {status && !home && <CreateButton />}
       <Stack spacing="10">
         {projects.slice(0, size).map((project) => (

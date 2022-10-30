@@ -5,7 +5,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
-axios.defaults.baseURL = "https://juelhossain.herokuapp.com";
+axios.defaults.baseURL = "https://juelhossain.onrender.com";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
