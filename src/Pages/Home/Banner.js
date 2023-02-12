@@ -9,7 +9,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import ReactTyped from "react-typed";
-import cv from "../../assets/Cv Of Juel-Hossain.pdf";
+import cv from "../../assets/CV of Juel Hossain web developer.pdf";
 import me from "../../assets/me.png";
 import MyButton from "../../Components/MyButton";
 const Banner = () => {
