@@ -1,9 +1,8 @@
 import { useDisclosure } from "@chakra-ui/react";
-import React from "react";
 import { EditButton } from "../../../Components/Admin/Buttons";
 import { deleteProject } from "../../../Hooks/Helper/Projects";
 import DeleteAlert from "../Helper/DeleteAlert";
-import UpdateProject from "../Update/Update";
+import UpdateProject from "../Update/update";
 import { DeleteButton } from "./../../../Components/Admin/Buttons";
 import useProjects from "./../../../Hooks/useProjects";
 

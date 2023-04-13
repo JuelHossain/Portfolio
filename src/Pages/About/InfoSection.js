@@ -1,14 +1,30 @@
-import { Container } from "@chakra-ui/react";
+import { Container, IconButton, useDisclosure } from "@chakra-ui/react";
 import React from "react";
+import { FaPlus } from "react-icons/fa";
 import InfoCard from "./InfoCard";
+import Create from "./Helper/Create";
 
-export const InfoSection = ({ info, title, about }) => {
+export const InfoSection = ({ info, title, about,cat }) => {
   const [data, , refetch] = info;
+
+    const {
+    isOpen: isOpenCreate,
+    onOpen: onOpenCreate,
+    onClose: onCloseCreate,
+  } = useDisclosure();
+
   return (
     <Container
       maxW="container.lg"
       className=" bg-gray-100 dark:bg-gray-800 rounded-lg  relative "
     >
+      <div className="absolute top-2 right-2">
+<IconButton
+        className="dark:bg-gray-900/10 dark:text-bg-gray-200 ring-0 dark:hover:bg-gray-900/50"
+        icon={<FaPlus />}
+        onClick={onOpenCreate}
+      />
+      </div>
       <div className="max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="max-w-xl">
           <h2 className="text-3xl font-bold ">{title}</h2>
@@ -22,6 +38,12 @@ export const InfoSection = ({ info, title, about }) => {
           ))}
         </div>
       </div>
+       <Create
+        cat={cat}
+        isOpen={isOpenCreate}
+        onClose={onCloseCreate}
+        refetch={refetch}
+      />
     </Container>
   );
 };
@@ -30,8 +52,9 @@ export const Courses = ({ info }) => {
   return (
     <InfoSection
       info={info}
-      title="Private Courses ."
-      about="Here is some info about my programming journey. how i became a web dev you can have some idea from below. information. please do click on the name of the institutions to reach their website."
+      title="Programming Journey ."
+      about="Here is some info about my programming journey."
+      cat="milestone"
     />
   );
 };
@@ -39,17 +62,19 @@ export const Experiences = ({ info }) => {
   return (
     <InfoSection
       info={info}
-      title="Experiences ."
-      about="Here is some info about my experiences. i have no experiences working in any company as a web dev . but i have some other experiences which you can see below."
+      title="Work History ."
+      about="Here is some info about my working experiences."
+      cat="experience"
     />
-  );
+  ); 
 };
 export const Educations = ({ info }) => {
   return (
     <InfoSection
       info={info}
-      title="Academic Carrier ."
-      about="Here is some info about my Academic Carrier . from start to begin ."
+      title="Academic Carrier."
+      about="Here is some info about my Academic Carrier."
+      cat="degree"
     />
   );
 };

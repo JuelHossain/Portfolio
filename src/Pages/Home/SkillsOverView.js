@@ -2,12 +2,12 @@ import { SimpleGrid } from "@chakra-ui/react";
 import { FaKeyboard } from "react-icons/fa";
 import {
   SiExpress,
+  SiJavascript,
   SiMongodb,
   SiNodedotjs,
   SiReact,
   SiRedux,
-  SiTailwindcss,
-  SiWebdriverio,
+  SiTailwindcss
 } from "react-icons/si";
 import PageTitle from "../../Components/PageTitle";
 import Section from "../../Components/Section";
@@ -23,16 +23,16 @@ const SkillsOverView = () => {
       icon: <SiMongodb />,
     },
     {
-      bg: "bg-[#61DBFB] hover:bg-cyan-400",
-      title: "React Js",
-      text: "The Most Popular Javascript Library",
-      icon: <SiReact />,
-    },
-    {
       bg: "bg-green-700 hover:bg-green-600",
       title: "Express Js",
       text: "Most Popular Node js Framework",
       icon: <SiExpress />,
+    },
+    {
+      bg: "bg-[#61DBFB] hover:bg-cyan-400",
+      title: "React Js",
+      text: "The Most Popular Javascript Library",
+      icon: <SiReact />,
     },
     {
       bg: "bg-[#339933] hover:bg-[#336633]",
@@ -54,13 +54,13 @@ const SkillsOverView = () => {
     },
     {
       bg: "bg-orange-600 hover:bg-orange-500",
-      title: "Web Driver IO",
-      text: "Most Popular Javascript Automation Framework",
-      icon: <SiWebdriverio />,
+      title: "Javascript",
+      text: "Backbone of all websites",
+      icon: <SiJavascript />,
     },
     {
       bg: "bg-blue-600 hover:bg-blue-700",
-      title: "80+ WPM",
+      title: "75+ WPM",
       text: "Professional Typing Speed.",
       icon: <FaKeyboard />,
     },
