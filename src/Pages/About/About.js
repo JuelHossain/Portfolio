@@ -6,6 +6,7 @@ import Head from "./Helper/Head";
 import { Courses, Educations, Experiences } from "./InfoSection";
 const About = () => {
   const { educations, courses, experiences } = useAbout();
+  console.log(courses);
   const loading = educations[1] || courses[1] || experiences[1];
   if (loading) {
     return (

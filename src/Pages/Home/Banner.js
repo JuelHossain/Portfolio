@@ -9,7 +9,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import ReactTyped from "react-typed";
-import cv from "../../assets/CV of Juel Hossain web developer.pdf";
+import cv from "../../assets/full stack developer resume pro.pdf";
 import me from "../../assets/me.png";
 import MyButton from "../../Components/MyButton";
 const Banner = () => {
@@ -43,7 +43,7 @@ const Banner = () => {
               about me.
             </Text>
             <MyButton
-              text={"Download CV"}
+              text={"Download Resume"}
               icon={<DownloadIcon mx="2px" />}
               link={cv}
             />

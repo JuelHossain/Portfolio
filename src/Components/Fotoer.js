@@ -59,7 +59,7 @@ const Footer = () => {
           ))}
         </ul>
         <p className=" p-1 text-sm text-center text-gray-400 lg:text-right">
-          Copyright &copy; 2022. All rights reserved.
+          Copyright &copy; 2023. All rights reserved.
         </p>
       </div>
       <ScrollToTop

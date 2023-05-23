@@ -24,11 +24,11 @@ const Nav = ({ small }) => {
       link: "/projects",
       icon: <AiFillProject className="text-lg" />,
     },
-    {
+    /* {
       name: "About",
       link: "/about",
       icon: <BsFillExclamationSquareFill className="text-md" />,
-    },
+    },*/
     {
       name: "Contact",
       link: "/contact",
